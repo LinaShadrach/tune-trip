@@ -3,6 +3,12 @@ html{
 }
 h1 {
   color: black;
+  font-size: 30rem;
+  letter-spacing: -6rem;
+  line-height: 15rem;
+}
+h2 {
+  color: black;
   font-size: 40rem;
   letter-spacing: -6rem;
   line-height: 15rem;
@@ -14,4 +20,14 @@ h3 {
 }
 a {
   font-size: 2rem;
+}
+.userForm {
+  // font-family: 'Russo One', sans-serif;
+// font-family: 'Days One', sans-serif;
+font-family: 'Orbitron', sans-serif;
+}
+.nav {
+  // font-family: 'Russo One', sans-serif;
+// font-family: 'Days One', sans-serif;
+font-family: 'Orbitron', sans-serif;
 }

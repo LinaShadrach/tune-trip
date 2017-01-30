@@ -1,12 +1,7 @@
-body {
-  // font-family: 'Russo One', sans-serif;
-// font-family: 'Days One', sans-serif;
-font-family: 'Orbitron', sans-serif;
-}
-
 .half, .sixteenth {
   display:flex;
   transform: rotate(90deg);
+  opacity: 0;
 }
 
 .thirtysecond, .flat {
@@ -17,7 +12,169 @@ font-family: 'Orbitron', sans-serif;
   display:flex;
   transform: rotate(180deg);
 }
+
+.rowone, .rowtwo, .rowthree, .rowfour {
+  z-index: -10;
+  position: absolute;
+  top: -20px;
+  width: 100%;
+  opacity: 0;
+}
+
+.rowone {
+  -webkit-animation: rowoneAnimation infinite 20s 5s;
+  -moz-animation: rowoneAnimation infinite 20s 5s;
+  -o-animation: rowoneAnimation infinite 20s 5s;
+  animation: rowoneAnimation infinite 20s 5s;
+}
+@-webkit-keyframes rowoneAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@-moz-keyframes rowoneAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@-o-keyframes rowoneAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@keyframes rowoneAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+.rowtwo {
+  -webkit-animation: rowtwoAnimation infinite 15s;
+  -moz-animation: rowtwoAnimation infinite 15s;
+  -o-animation: rowtwoAnimation infinite 15s;
+  animation: rowtwoAnimation infinite 15s;
+}
+@-webkit-keyframes rowtwoAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@-moz-keyframes rowtwoAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@-o-keyframes rowtwoAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@keyframes rowtwoAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+.rowthree {
+  -webkit-animation: rowthreeAnimation infinite 12s 8s;
+  -moz-animation: rowthreeAnimation infinite 12s 8s;
+  -o-animation: rowthreeAnimation infinite 12s 8s;
+  animation: rowthreeAnimation infinite 12s 8s;
+}
+@-webkit-keyframes rowthreeAnimation {
+  0% {opacity: 1}
+  50% {opacity: 0}
+  100% {opacity: 1}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@-moz-keyframes rowthreeAnimation {
+  0% {opacity: 1}
+  50% {opacity: 0}
+  100% {opacity: 1}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@-o-keyframes rowthreeAnimation {
+  0% {opacity: 1}
+  50% {opacity: 0}
+  100% {opacity: 1}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@keyframes rowthreeAnimation {
+  0% {opacity: 1}
+  50% {opacity: 0}
+  100% {opacity: 1}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+.rowfour {
+  -webkit-animation: rowfourAnimation infinite 25s 12s;
+  -moz-animation: rowfourAnimation infinite 25s 12s;
+  -o-animation: rowfourAnimation infinite 25s 12s;
+  animation: rowfourAnimation infinite 25s 12s;
+}
+@-webkit-keyframes rowfourAnimation {
+  0% {opacity: 0}
+  60% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@-moz-keyframes rowfourAnimation {
+  0% {opacity: 0}
+  60% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@-o-keyframes rowfourAnimation {
+  0% {opacity: 0}
+  60% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@keyframes rowfourAnimation {
+  0% {opacity: 0}
+  60% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
 .half {
+  z-index: -10;
   position: absolute;
   top: 5%;
   left: 20%;
@@ -34,7 +191,7 @@ font-family: 'Orbitron', sans-serif;
   0% {left: 50%}
   100% {left: 20%}
   0% {opacity: 0}
-  100% {opacity: 1}
+  100% {opacity: .9}
 }
 @-moz-keyframes halfAnimation {
   0% {top: 80%}
@@ -42,7 +199,7 @@ font-family: 'Orbitron', sans-serif;
   0% {left: 50%}
   100% {left: 20%}
   0% {opacity: 0}
-  100% {opacity: 1}
+  100% {opacity: .9}
 }
 @-o-keyframes halfAnimation {
   0% {top: 80%}
@@ -50,7 +207,7 @@ font-family: 'Orbitron', sans-serif;
   0% {left: 50%}
   100% {left: 20%}
   0% {opacity: 0}
-  100% {opacity: 1}
+  100% {opacity: .9}
 }
 @keyframes halfAnimation {
   0% {top: 80%}
@@ -58,9 +215,10 @@ font-family: 'Orbitron', sans-serif;
   0% {left: 50%}
   100% {left: 20%}
   0% {opacity: 0}
-  100% {opacity: 1}
+  100% {opacity: .9}
 }
 .sixteenth {
+  z-index: -10;
   position: absolute;
   top: 5%;
   left: 20%;
@@ -104,6 +262,7 @@ font-family: 'Orbitron', sans-serif;
   100% {opacity: 1}
 }
 .thirtysecond {
+  z-index: -10;
   position: absolute;
   bottom: 5%;
   left: 15%;
@@ -147,6 +306,7 @@ font-family: 'Orbitron', sans-serif;
   100% {opacity: 1}
 }
 .flat {
+  z-index: -10;
   position: absolute;
   bottom: 5%;
   left: 15%;
@@ -190,6 +350,7 @@ font-family: 'Orbitron', sans-serif;
   100% {opacity: 1}
 }
 .one {
+  z-index: -10;
   position: absolute;
   top: -10%;
   right: 5%;
@@ -233,6 +394,7 @@ font-family: 'Orbitron', sans-serif;
   100% {opacity: 1}
 }
 .two {
+  z-index: -10;
   position: absolute;
   top: -10%;
   right: 5%;
@@ -276,6 +438,7 @@ font-family: 'Orbitron', sans-serif;
   100% {opacity: 1}
 }
 .three {
+  z-index: -10;
   position: absolute;
   bottom: 5%;
   right: 5%;
@@ -313,6 +476,7 @@ font-family: 'Orbitron', sans-serif;
 }
 
 .four {
+  z-index: -10;
   position: absolute;
   bottom: -15%;
   right: 5%;
