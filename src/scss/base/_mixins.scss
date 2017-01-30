@@ -1,0 +1,20 @@
+@mixin fontprepLora {
+  color: whitesmoke;
+  font-family: 'Lora', serif;
+  text-transform: uppercase;
+}
+@mixin fontprepAnton {
+  color: whitesmoke;
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  text-shadow: 5px 5px 5px black;
+}
+@mixin backgroundpic ($height, $file){
+  height:$height;
+  position: relative;
+  background: url(../img/#{$file}.jpg);
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
