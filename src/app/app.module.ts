@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
 import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
 
 import { AppComponent } from './app.component';
 import { SplashComponent } from './splash/splash.component';
@@ -26,7 +27,8 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
