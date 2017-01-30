@@ -54,9 +54,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-body {
-  display: flex; }
-
 .half, .sixteenth {
   display: flex;
   transform: rotate(90deg); }
@@ -557,11 +554,6 @@ body {
     opacity: 0; }
   100% {
     opacity: 1; } }
-div {
-  height: 90%;
-  width: 90%;
-  display: flex; }
-
 html {
   font-size: 62.5%; }
 
@@ -571,7 +563,52 @@ h1 {
   letter-spacing: -6rem;
   line-height: 15rem; }
 
-body {
-  background-color: red; }
+h3 {
+  font-size: 3.5rem;
+  display: flex;
+  justify-content: flex-start; }
+
+a {
+  font-size: 2rem; }
+
+.test {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 15vh; }
+
+.userForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: blue;
+  width: 60vw;
+  height: 40vh; }
+  .userForm label {
+    font-size: 2rem;
+    margin-bottom: 15px; }
+  .userForm input {
+    width: 40%;
+    font-size: 1.5rem;
+    margin-bottom: 15px; }
+  .userForm button {
+    margin-top: 20px;
+    width: 20%;
+    height: 60px;
+    font-size: 2rem;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px gray; }
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  width: 60vw;
+  height: 10vh; }
 
 /*# sourceMappingURL=styles.css.map */

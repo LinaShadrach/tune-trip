@@ -1,7 +1,3 @@
-body {
-  display: flex;
-  // justify-content: center;
-}
 
 
 .half, .sixteenth {
@@ -355,16 +351,4 @@ body {
   100% {right: 5%}
   0% {opacity: 0}
   100% {opacity: 1}
-}
-
-div {
-  height: 90%;
-  width: 90%;
-  display: flex;
-  // border: 1px solid black;
-  // background-color: blue;
-  // -webkit-animation: test 3s;
-  // -moz-animation: test 3s;
-  // -o-animation: test 3s;
-  // animation: test 3s;
 }
