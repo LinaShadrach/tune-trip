@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
+import {lastFMAPIKey} from './api-keys';
 
 import { AppComponent } from './app.component';
 import { SplashComponent } from './splash/splash.component';
@@ -16,6 +17,9 @@ export const firebaseConfig = {
   databaseURL: masterFirebaseConfig.databaseURL,
   storageBucket: masterFirebaseConfig.storageBucket
 };
+export const lastFMConfig = {
+  apiKey: lastFMAPIKey.apiKey
+}
 
 @NgModule({
   declarations: [
@@ -28,7 +32,7 @@ export const firebaseConfig = {
     FormsModule,
     HttpModule,
     routing,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig) 
   ],
   providers: [],
   bootstrap: [AppComponent]
