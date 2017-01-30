@@ -1,3 +1,13 @@
-<p>
-  splash works!
-</p>
+<div>
+  <div>
+    <h3>Tune-Trip</h3>
+  </div>
+    <div>
+      <div>
+        <label>Last.fm username:</label>
+        <br>
+        <input #username>
+      </div>
+    <button type="button" (click)="submitForm(username.value); username.value='';">Sign-in</button>
+  </div>
+</div>
