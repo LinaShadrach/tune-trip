@@ -1,31 +1,46 @@
-# TuneTrip
+# Tune-Trip
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
+ Give you near by recommended music artists, 1/30/2017
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+ By [Kevin Finley](http://www.kfinley.com), Eric Raetz, Alex Francois, Lina Shadrach
 
-## Code scaffolding
+## Description
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+This application will use Last.fm API and songKick API to give you recommended artists concerts.
 
-## Build
+## Setup/Installation Requirements
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Clone the repository and `cd` into your directory:
+```
+$ npm install
+$ bower install
+$ np serve
+```
 
-## Running unit tests
+## Known Bugs
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+If you notice any bugs or problems you can fill out an issue [here](http://www.github.com/kftwotwo/tune-trip/issues) or feel free to submit a pull request.
 
-## Running end-to-end tests
+## Contact details
+Here is our emails
+```
+Kevin Finley: kf.two.two@gmail.com
+Lina Shadrach: GitHub username: LinaShadrach
+Eric Raetz: ayutoa@runbox.com
+Alex Francois: apfrancois86@gmail.com
+```
+## Contribute
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+If you wish to contribute create an issue and describe your idea then fork it and submit a pull request!
 
-## Deploying to GitHub Pages
+## Technologies Used
+```
+HTML
+CSS
+TypeScript
+```
+### License
 
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
+*This is under a MIT License*
 
-## Further help
-
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Copyright (c) 2017 **_Kevin Finley, Eric Raetz, Alex Francois, Lina Shadrach_**
