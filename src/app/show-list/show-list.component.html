@@ -1,3 +1,18 @@
-<p>
-  show-list works!
-</p>
+<div>
+  <div>
+    <h3>Find new concerts near you!</h3>
+  </div>
+    <div>
+      <div>
+        <label>Arist:</label>
+        <br>
+        <input #artist>
+      </div>
+      <div>
+        <label>Location:</label>
+        <br>
+        <input #location>
+      </div>
+    <button type="button" (click)="submitForm(artist.value, location.value);">Search</button>
+  </div>
+</div>
