@@ -1,14 +1,48 @@
 .splash-container {
   position: relative;
-  // z-index: -5;
   width: 100vw;
   min-height: 100vh;
   padding-top: 15vh;
   background-image: radial-gradient( $lime-green,$kinda-blue);
 }
-
+.rowone, .rowtwo, .rowthree, .rowfour {
+    h2 {
+      color: black;
+      font-size: 60rem;
+      letter-spacing: -6rem;
+      line-height: 15rem;
+      @media (max-width: 2000px) {
+        font-size: 50rem;
+        letter-spacing: -4rem;
+      }
+      @media (max-width: 1850px) {
+        font-size: 40rem;
+      }
+      @media (max-width: 1500px) {
+        font-size: 35rem;
+        letter-spacing: -2rem;
+      }
+      @media (max-width: 1300px) {
+        font-size: 30rem;
+      }
+      @media (max-width: 1120px) {
+        font-size: 27rem;
+      }
+      @media (max-width: 950px) {
+        font-size: 24rem;
+      }
+      @media (max-width: 845px) {
+        font-size: 21rem;
+      }
+      @media (max-width: 750px) {
+        font-size: 19rem;
+      }
+      @media (max-width: 600px) {
+        font-size: 12rem;
+      }
+  }
+}
 .test {
-  // width: 100vw;
   overflow: hidden;
   display: flex;
   align-items: center;

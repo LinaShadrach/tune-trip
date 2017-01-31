@@ -333,6 +333,41 @@ a {
   padding-top: 15vh;
   background-image: radial-gradient(#84d100, #1656af); }
 
+.rowone h2, .rowtwo h2, .rowthree h2, .rowfour h2 {
+  color: black;
+  font-size: 60rem;
+  letter-spacing: -6rem;
+  line-height: 15rem; }
+  @media (max-width: 2000px) {
+    .rowone h2, .rowtwo h2, .rowthree h2, .rowfour h2 {
+      font-size: 50rem;
+      letter-spacing: -4rem; } }
+  @media (max-width: 1850px) {
+    .rowone h2, .rowtwo h2, .rowthree h2, .rowfour h2 {
+      font-size: 40rem; } }
+  @media (max-width: 1500px) {
+    .rowone h2, .rowtwo h2, .rowthree h2, .rowfour h2 {
+      font-size: 35rem;
+      letter-spacing: -2rem; } }
+  @media (max-width: 1300px) {
+    .rowone h2, .rowtwo h2, .rowthree h2, .rowfour h2 {
+      font-size: 30rem; } }
+  @media (max-width: 1120px) {
+    .rowone h2, .rowtwo h2, .rowthree h2, .rowfour h2 {
+      font-size: 27rem; } }
+  @media (max-width: 950px) {
+    .rowone h2, .rowtwo h2, .rowthree h2, .rowfour h2 {
+      font-size: 24rem; } }
+  @media (max-width: 845px) {
+    .rowone h2, .rowtwo h2, .rowthree h2, .rowfour h2 {
+      font-size: 21rem; } }
+  @media (max-width: 750px) {
+    .rowone h2, .rowtwo h2, .rowthree h2, .rowfour h2 {
+      font-size: 19rem; } }
+  @media (max-width: 600px) {
+    .rowone h2, .rowtwo h2, .rowthree h2, .rowfour h2 {
+      font-size: 12rem; } }
+
 .test {
   overflow: hidden;
   display: flex;
