@@ -14,8 +14,10 @@
         <input #location>
       </div>
     <button type="button" (click)="search(artist.value, location.value);">Search</button>
-    <div *ngFor="let artist of artistList | async">
-      <h3>{{artist.name}}</h3>
-    </div>
+    <!-- <div *ngIf="showResults"> -->
+      <div *ngFor="let artist of artistList | async">
+        <h3>{{artist.resultsPage.results.event[0].displayname}}</h3>
+      </div>
+    <!-- </div> -->
   </div>
 </div>

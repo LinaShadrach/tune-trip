@@ -9,15 +9,15 @@ import 'rxjs/add/operator/map';
 export class SongKickService {
 
   constructor(private http: Http) { }
-  printTracks(response){
+  getArtists(response){
     if(response.artist.name){
-      return this.http.get("http://api.songkick.com/api/3.0/events.json?artist_name="+ response.artist.name +"&location=sk:12283&apikey=" + songKickKey + "&format=json")
+      return this.http.get("http://api.songkick.com/api/3.0/events.json?artist_name="+ response.artist.name +"&location=sk:12283&apikey=" + songKickKey);
     }
     else{
       return undefined;
     }
-    }
   }
+}
 
 
 // map(data=>data.json().resultsPage.totalEntries)

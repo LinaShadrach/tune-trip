@@ -9,11 +9,11 @@ import 'rxjs/add/operator/map';
 export class LastFMService {
   similarTracks=[];
   constructor(private http: Http) { }
-  getSimilarArtists(username){
+  getTopTracks(username){
     return this.http.get("http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user="+username+"&api_key="+lastFMAPIKey+"&format=json");
   }
-  setTracks(track){
-    return this.http.get("http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist="+ track.artist.name + "&track="+track.name+"&api_key="+lastFMAPIKey+"&format=json");
+  getSimilarTracks(track){
+    return this.http.get("http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist="+ track.artist.name + "&track="+track.name+"&limit=20&api_key="+lastFMAPIKey+"&format=json");
 
 
   }
