@@ -1,4 +1,4 @@
-.gradient-container {
+.detailgradient-container {
   width: 100vw;
   min-height: 100vh;
   margin-top: 0;
@@ -29,13 +29,13 @@
     margin-right: 20px;
   }
 }
-.results-container {
+.detail-container {
   overflow: hidden;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.results-form {
+.detailform {
   display: flex;
   justify-content: space-between;
   background-color: $black;
@@ -45,7 +45,7 @@
   font-family: 'Orbitron', sans-serif;
   padding: 15px;
 }
-.resultOutput {
+.detailOutput {
   display: flex;
   justify-content: space-around;
   min-width: 100%;
