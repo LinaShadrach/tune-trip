@@ -25,11 +25,12 @@ export class ShowListComponent implements OnInit {
     });
     this.userToDisplay = this.userService.getUserById(this.userId);
     this.currentUsername=this.userService.setUsername(this.userId);
-    console.log(this.currentUsername);
   }
   search(){
-    var artistList= this.lastFMService.getSimilarArtists(this.currentUsername);
-    console.log(this.currentUsername);
+    var artistList= this.lastFMService.getSimilarArtists(this.currentUsername).subscribe(data=>{
+      console.log("data "+ data);
+      this.lastFMService.printTracks(data);
+    });
 
   }
 

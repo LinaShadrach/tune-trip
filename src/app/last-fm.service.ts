@@ -7,9 +7,12 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class LastFMService {
-
+  topTracks;
   constructor(private http: Http) { }
   getSimilarArtists(username){
-    return this.http.get("http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user="+username+"&api_key="+lastFMAPIKey+"&format=json").subscribe(data=>{console.log(data)});
+    return this.http.get("http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user="+username+"&api_key="+lastFMAPIKey+"&format=json");
+  }
+  setTracks(data){
+    console.log(data.json().toptracks.track[0]);
   }
 }
