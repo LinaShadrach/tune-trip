@@ -10,9 +10,43 @@ export class SongKickService {
 
   constructor(private http: Http) { }
   printTracks(response){
-    for(var i=0; i<response.json().similartracks.track.length; i++){
-      console.log("for "+response.json().similartracks.track[i].artist.name);
+    if(response.artist.name){
+      return this.http.get("http://api.songkick.com/api/3.0/events.json?artist_name="+ response.artist.name +"&location=sk:12283&apikey=" + songKickKey + "&format=json")
+    }
+    else{
+      return undefined;
+    }
     }
   }
 
-}
+
+// map(data=>data.json().resultsPage.totalEntries)
+// response.json().similartracks.track.length
+// .subscribe(data=>{console.log(data);});
+// http://api.songkick.com/api/3.0/events.json?artist_name=beyonce&location=sk:12283&apikey=RQSBZ1uRiMsqxnLs
+
+// Response
+// _body
+// :
+// "{"resultsPage":{"status":"ok","results":{},"perPage":50,"page":1,"totalEntries":0}}"
+// headers
+// :
+// Headers
+// ok
+// :
+// true
+// status
+// :
+// 200
+// statusText
+// :
+// "OK"
+// type
+// :
+// 2
+// url
+// :
+// "http://api.songkick.com/api/3.0/events.json?artist_name=G-Eazy&location=sk:12283&apikey=RQSBZ1uRiMsqxnLs&format=json"
+// __proto__
+// :
+// Body

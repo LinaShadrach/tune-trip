@@ -14,8 +14,8 @@
         <input #location>
       </div>
     <button type="button" (click)="search(artist.value, location.value);">Search</button>
-    <!-- <div *ngFor="let track of topTracks | async">
-      <h3>{{track.name}}</h3>
-    </div> -->
+    <div *ngFor="let artist of artistList | async">
+      <h3>{{artist.name}}</h3>
+    </div>
   </div>
 </div>

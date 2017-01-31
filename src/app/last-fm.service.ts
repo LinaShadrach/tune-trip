@@ -17,11 +17,6 @@ export class LastFMService {
 
 
   }
-  printTracks(response){
-    for(var i=0; i<response.json().similartracks.track.length; i++){
-      console.log("for "+response.json().similartracks.track[i].artist.name);
-    }
-  }
 }
 
 // .subscribe(data=>{
