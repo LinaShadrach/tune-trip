@@ -16,6 +16,7 @@ export class ShowListComponent implements OnInit {
   userToDisplay;
   userId: string;
   currentUsername;
+  topTracks;
 
   constructor(private router: Router, private userService: UserService, private route: ActivatedRoute, private lastFMService: LastFMService) { }
 
@@ -27,11 +28,10 @@ export class ShowListComponent implements OnInit {
     this.currentUsername=this.userService.setUsername(this.userId);
   }
   search(){
-    var artistList= this.lastFMService.getSimilarArtists(this.currentUsername).subscribe(data=>{
-      console.log("data "+ data);
-      this.lastFMService.printTracks(data);
+    this.topTracks= this.lastFMService.getSimilarArtists(this.currentUsername).subscribe(data=>{
+      this.lastFMService.setTracks(data.json().toptracks.track);
+      console.log(data.json().toptracks.track);
     });
-
   }
 
 }
