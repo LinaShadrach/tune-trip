@@ -1,6 +1,6 @@
 .splash-container {
   position: relative;
-  z-index: -5;
+  // z-index: -5;
   width: 100vw;
   min-height: 100vh;
   padding-top: 15vh;
@@ -19,6 +19,8 @@ img {
   height: 75px;
 }
 .userForm {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,6 +45,8 @@ img {
 }
 
 .nav {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,9 +74,16 @@ img {
     a {
       color: $lime-green;
       text-decoration: none;
+      cursor: pointer;
     }
     &:hover > .about {
       left: 0;
     }
   }
+}
+
+a {
+  color: $lime-green;
+  text-decoration: none;
+  cursor: pointer;
 }

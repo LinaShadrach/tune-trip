@@ -55,7 +55,7 @@ table {
   border-spacing: 0; }
 
 .rowone, .rowtwo, .rowthree, .rowfour {
-  z-index: -10;
+  z-index: 1;
   position: absolute;
   top: -20px;
   width: 100%;
@@ -328,7 +328,6 @@ a {
 
 .splash-container {
   position: relative;
-  z-index: -5;
   width: 100vw;
   min-height: 100vh;
   padding-top: 15vh;
@@ -345,6 +344,8 @@ img {
   height: 75px; }
 
 .userForm {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -375,6 +376,8 @@ img {
     cursor: pointer; }
 
 .nav {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -398,9 +401,15 @@ img {
     align-items: flex-end; }
     .nav .nav-right a {
       color: #84d100;
-      text-decoration: none; }
+      text-decoration: none;
+      cursor: pointer; }
     .nav .nav-right:hover > .about {
       left: 0; }
+
+a {
+  color: #84d100;
+  text-decoration: none;
+  cursor: pointer; }
 
 .clock {
   position: relative;
@@ -624,9 +633,8 @@ img {
     letter-spacing: 0;
     line-height: 0; }
 
-.splash-container {
+.about-container {
   position: relative;
-  z-index: -5;
   width: 100vw;
   min-height: 100vh;
   padding-top: 15vh;
