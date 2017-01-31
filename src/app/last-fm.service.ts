@@ -7,16 +7,22 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class LastFMService {
-  similarTracks;
+  similarTracks=[];
   constructor(private http: Http) { }
   getSimilarArtists(username){
     return this.http.get("http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user="+username+"&api_key="+lastFMAPIKey+"&format=json");
   }
-  setTracks(topTracks){
-    for(var i=0; i<topTracks.length; i++){
-      this.http.get("http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist="+ topTracks[i].artist.name + "&track="+topTracks[i].name+"&api_key="+lastFMAPIKey+"&format=json").subscribe(data=>{
-        console.log(data.json());
-      });
+  setTracks(track){
+    return this.http.get("http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist="+ track.artist.name + "&track="+track.name+"&api_key="+lastFMAPIKey+"&format=json");
+
+
+  }
+  printTracks(response){
+    for(var i=0; i<response.json().similartracks.track.length; i++){
+      console.log("for "+response.json().similartracks.track[i].artist.name);
     }
   }
 }
+
+// .subscribe(data=>{
+//   console.log(data.json().similartracks.track[0].name);    })

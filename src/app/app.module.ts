@@ -17,9 +17,8 @@ export const firebaseConfig = {
   databaseURL: masterFirebaseConfig.databaseURL,
   storageBucket: masterFirebaseConfig.storageBucket
 };
-export const lastFMConfig = {
-  apiKey: lastFMAPIKey.apiKey
-}
+export const lastFMConfig = lastFMAPIKey;
+
 
 @NgModule({
   declarations: [
@@ -32,7 +31,7 @@ export const lastFMConfig = {
     FormsModule,
     HttpModule,
     routing,
-    AngularFireModule.initializeApp(firebaseConfig) 
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
