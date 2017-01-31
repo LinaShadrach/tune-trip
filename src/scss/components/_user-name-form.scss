@@ -1,10 +1,18 @@
+.splash-container {
+  position: relative;
+  z-index: -5;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 15vh;
+  background-image: radial-gradient( $lime-green,$kinda-blue);
+}
+
 .test {
   // width: 100vw;
   overflow: hidden;
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 15vh;
 }
 img {
   width: 75px;
@@ -17,7 +25,7 @@ img {
   flex-direction: column;
   background-color: $black;
   width: 60vw;
-  height: 40vh;
+  min-height: 40vh;
   border-radius: 0px 0px 20px 20px;
   label {
     font-size: 2rem;
@@ -30,17 +38,7 @@ img {
     margin-bottom: 15px;
   }
   button {
-    margin-top: 20px;
-    width: 25%;
-    height: 60px;
-    font-size: 2rem;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px $smoke-gray;
-    color: $lime-green;
-    background-color: $dark-gray;
-    font-family: 'Orbitron', sans-serif;
-    cursor: pointer;
+    @include button($dark-gray);
   }
 }
 
@@ -59,6 +57,9 @@ img {
   }
   .nav-left {
     display: flex;
+    h3 {
+      cursor: pointer;
+    }
   }
   .nav-right {
     display: flex;

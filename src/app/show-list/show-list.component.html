@@ -1,18 +1,146 @@
-<div>
-  <div>
-    <h3>Find new concerts near you!</h3>
-  </div>
-    <div>
-      <div>
-        <label>Arist:</label>
-        <br>
-        <input #artist>
+<div class="gradient-container">
+
+  <div class="results-container">
+    <div class="nav">
+      <div class="nav-left">
+        <img src="../assets/img/guitar.png">
+        <h3 routerLink="">TuneTrip</h3>
+        <img src="../assets/img/plane1.png">
       </div>
-      <div>
+      <div class="nav-right-results">
+        <div class="search">
+        <label>Artist:</label>
+        <input #artist>
         <label>Location:</label>
-        <br>
         <input #location>
       </div>
+        <button>Search</button>
+      </div>
+    </div>
+    <div class="results-form">
+      <!-- <div class="clock">
+        <div class="noon">
+          <h4>&#9839;</h4>
+        </div>
+        <div class="one">
+          <h4>&#9833;</h4>
+        </div>
+        <div class="two">
+          <h4>&#9835;</h4>
+        </div>
+        <div class="three">
+          <h4>&#9839;</h4>
+        </div>
+        <div class="four">
+          <h4>&#9835;</h4>
+        </div>
+        <div class="five">
+          <h4>&#9833;</h4>
+        </div>
+        <div class="six">
+          <h4>&#9839;</h4>
+        </div>
+        <div class="seven">
+          <h4>&#9833;</h4>
+        </div>
+        <div class="eight">
+          <h4>&#9835;</h4>
+        </div>
+        <div class="nine">
+          <h4>&#9839;</h4>
+        </div>
+        <div class="ten">
+          <h4>&#9835;</h4>
+        </div>
+        <div class="eleven">
+          <h4>&#9833;</h4>
+        </div>
+      </div> -->
+      <div class="resultOutput">
+        <img src="image.png" alt="" />
+        <h2>Artist Name</h2>
+        <h3>Track Name</h3>
+        <h3>Shows</h3>
+      </div>
+      <!-- <div class="resultOutput">
+        <img src="image.png" alt="" />
+        <h2>Artist Name</h2>
+        <h3>Track Name</h3>
+        <h3>Shows</h3>
+      </div>
+      <div class="resultOutput">
+        <img src="image.png" alt="" />
+        <h2>Artist Name</h2>
+        <h3>Track Name</h3>
+        <h3>Shows</h3>
+      </div>
+      <div class="resultOutput">
+        <img src="image.png" alt="" />
+        <h2>Artist Name</h2>
+        <h3>Track Name</h3>
+        <h3>Shows</h3>
+      </div>
+      <div class="resultOutput">
+        <img src="image.png" alt="" />
+        <h2>Artist Name</h2>
+        <h3>Track Name</h3>
+        <h3>Shows</h3>
+      </div>
+      <div class="resultOutput">
+        <img src="image.png" alt="" />
+        <h2>Artist Name</h2>
+        <h3>Track Name</h3>
+        <h3>Shows</h3>
+      </div>
+      <div class="resultOutput">
+        <img src="image.png" alt="" />
+        <h2>Artist Name</h2>
+        <h3>Track Name</h3>
+        <h3>Shows</h3>
+      </div>
+      <div class="resultOutput">
+        <img src="image.png" alt="" />
+        <h2>Artist Name</h2>
+        <h3>Track Name</h3>
+        <h3>Shows</h3>
+      </div>
+      <div class="resultOutput">
+        <img src="image.png" alt="" />
+        <h2>Artist Name</h2>
+        <h3>Track Name</h3>
+        <h3>Shows</h3>
+      </div>
+      <div class="resultOutput">
+        <img src="image.png" alt="" />
+        <h2>Artist Name</h2>
+        <h3>Track Name</h3>
+        <h3>Shows</h3>
+      </div>
+      <div class="resultOutput">
+        <img src="image.png" alt="" />
+        <h2>Artist Name</h2>
+        <h3>Track Name</h3>
+        <h3>Shows</h3>
+      </div> -->
+    </div>
+
+        <!-- <div>
+        <div>
+        <h3>Find new concerts near you!</h3>
+      </div>
+      <div>
+      <div>
+      <label>Arist:</label>
+      <br>
+      <input #artist>
+      </div>
+      <div>
+    <label>Location:</label>
+    <br>
+    <input #location>
+    </div>
     <button type="button" (click)="submitForm(artist.value, location.value);">Search</button>
+    </div>
+    </div> -->
   </div>
 </div>
