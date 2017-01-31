@@ -4,7 +4,7 @@
   width: 100vw;
   min-height: 100vh;
   padding-top: 15vh;
-  background-image: radial-gradient( $lime-green,$kinda-blue);
+  background-image: radial-gradient($lavender, $dark-gray);
 }
 
 .test {
@@ -17,9 +17,10 @@ img {
   width: 75px;
   height: 75px;
 }
-.userForm {
+.aboutForm {
   display: flex;
-  justify-content: center;
+  padding-top: 25px;
+  // justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: $black;
@@ -27,7 +28,6 @@ img {
   min-height: 40vh;
   border-radius: 0px 0px 20px 20px;
 }
-
 .nav {
   display: flex;
   justify-content: space-between;
@@ -49,13 +49,24 @@ img {
   }
 }
 .about {
+  font-family: 'Russo One', sans-serif;
+  // font-family: 'Days One', sans-serif;
   color: $lime-green;
-  width: 100%;
-  height: 100%;
-  h2 {
-    font-size: 3rem;
-    color: $lime-green;
-    letter-spacing: 0.5rem;
-    line-height: 2;
+  width: 93%;
+  height: 93%;
+  line-height: 4rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  p {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+  h6 {
+    font-size: 1.7rem;
+  }
+  h4 {
+    font-size: 4rem;
+    margin-bottom: 40px;
+    margin-top: 10px;
   }
 }

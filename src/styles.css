@@ -391,8 +391,6 @@ img {
     align-self: center; }
   .nav .nav-left {
     display: flex; }
-    .nav .nav-left h3 {
-      cursor: pointer; }
   .nav .nav-right {
     display: flex;
     padding: 7px;
@@ -638,7 +636,7 @@ a {
   width: 100vw;
   min-height: 100vh;
   padding-top: 15vh;
-  background-image: radial-gradient(#84d100, #1656af); }
+  background-image: radial-gradient(#b6a4d8, #323331); }
 
 .test {
   overflow: hidden;
@@ -650,9 +648,9 @@ img {
   width: 75px;
   height: 75px; }
 
-.userForm {
+.aboutForm {
   display: flex;
-  justify-content: center;
+  padding-top: 25px;
   align-items: center;
   flex-direction: column;
   background-color: #000;
@@ -678,13 +676,21 @@ img {
       cursor: pointer; }
 
 .about {
+  font-family: 'Russo One', sans-serif;
   color: #84d100;
-  width: 100%;
-  height: 100%; }
-  .about h2 {
-    font-size: 3rem;
-    color: #84d100;
-    letter-spacing: 0.5rem;
-    line-height: 2; }
+  width: 93%;
+  height: 93%;
+  line-height: 4rem;
+  letter-spacing: 0.1rem;
+  text-align: center; }
+  .about p {
+    font-size: 1.5rem;
+    text-align: left; }
+  .about h6 {
+    font-size: 1.7rem; }
+  .about h4 {
+    font-size: 4rem;
+    margin-bottom: 40px;
+    margin-top: 10px; }
 
 /*# sourceMappingURL=styles.css.map */
