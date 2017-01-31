@@ -46,14 +46,35 @@ img {
 
 .nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: $dark-gray;
   width: 60vw;
   height: 10vh;
   border-radius: 20px 20px 0px 0px;
-
+  position: relative;
   h3 {
     color: $lime-green;
+    align-self: center;
   }
+  .nav-left {
+    display: flex;
+  }
+  .nav-right {
+    display: flex;
+    padding: 7px;
+    justify-content: flex-end;
+    align-self: flex-end;
+    align-items: flex-end;
+    a {
+      color: $lime-green;
+      text-decoration: none;
+    }
+    &:hover > .about {
+      left: 0;
+    }
+  }
+}
+.about {
+ display: none;
 }

@@ -874,13 +874,31 @@ img {
 
 .nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: #323331;
   width: 60vw;
   height: 10vh;
-  border-radius: 20px 20px 0px 0px; }
+  border-radius: 20px 20px 0px 0px;
+  position: relative; }
   .nav h3 {
-    color: #84d100; }
+    color: #84d100;
+    align-self: center; }
+  .nav .nav-left {
+    display: flex; }
+  .nav .nav-right {
+    display: flex;
+    padding: 7px;
+    justify-content: flex-end;
+    align-self: flex-end;
+    align-items: flex-end; }
+    .nav .nav-right a {
+      color: #84d100;
+      text-decoration: none; }
+    .nav .nav-right:hover > .about {
+      left: 0; }
+
+.about {
+  display: none; }
 
 /*# sourceMappingURL=styles.css.map */
