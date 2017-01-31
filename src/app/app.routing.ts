@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { SplashComponent } from './splash/splash.component';
 import { ShowListComponent } from './show-list/show-list.component';
+import { AboutComponent } from './about/about.component';
+
 
 const appRoutes: Routes = [
   {
@@ -13,6 +15,10 @@ const appRoutes: Routes = [
   {
   path: 'show-list',
   component: ShowListComponent
+  },
+  {
+  path: 'about',
+  component: AboutComponent
   }
 ]
 

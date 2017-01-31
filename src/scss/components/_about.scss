@@ -8,7 +8,6 @@
 }
 
 .test {
-  // width: 100vw;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -27,19 +26,6 @@ img {
   width: 60vw;
   min-height: 40vh;
   border-radius: 0px 0px 20px 20px;
-  label {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: $lime-green;
-  }
-  input {
-    width: 40%;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-  }
-  button {
-    @include button($dark-gray);
-  }
 }
 
 .nav {
@@ -61,18 +47,15 @@ img {
       cursor: pointer;
     }
   }
-  .nav-right {
-    display: flex;
-    padding: 7px;
-    justify-content: flex-end;
-    align-self: flex-end;
-    align-items: flex-end;
-    a {
-      color: $lime-green;
-      text-decoration: none;
-    }
-    &:hover > .about {
-      left: 0;
-    }
+}
+.about {
+  color: $lime-green;
+  width: 100%;
+  height: 100%;
+  h2 {
+    font-size: 3rem;
+    color: $lime-green;
+    letter-spacing: 0.5rem;
+    line-height: 2;
   }
 }

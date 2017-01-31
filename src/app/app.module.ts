@@ -7,12 +7,16 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { SplashComponent } from './splash/splash.component';
 import { ShowListComponent } from './show-list/show-list.component';
+import { AboutComponent } from './about/about.component';
+import { ShowDetailComponent } from './show-detail/show-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SplashComponent,
-    ShowListComponent
+    ShowListComponent,
+    AboutComponent,
+    ShowDetailComponent
   ],
   imports: [
     BrowserModule,
