@@ -21,9 +21,9 @@ export class ShowListComponent implements OnInit {
   currentUsername;
   topTracks;
   artistList;
-  artists;
   showResults = false;
   done=false;
+  showDetailBox=false;
 
   constructor(private router: Router, private userService: UserService, private route: ActivatedRoute, private lastFMService: LastFMService, private songKickService: SongKickService, private geocodingService: GeocodingService) { }
 
@@ -36,9 +36,7 @@ export class ShowListComponent implements OnInit {
     this.search();
     this.artistList=[];
   }
-  newLocation(location){
 
-  }
   searchWithLocation(location){
     this.showResults=true;
     this.done=false;
@@ -75,7 +73,6 @@ export class ShowListComponent implements OnInit {
     }
   }
 
-
   search(){
     this.showResults=true;
     this.topTracks = this.lastFMService.getTopTracks(this.currentUsername).subscribe(data=>{
@@ -89,6 +86,7 @@ export class ShowListComponent implements OnInit {
       };
     });
   }
+
   getArtistsOnInit(response){
     var currentTrack;
     for(var i=0; i<response.json().similartracks.track.length; i++){
@@ -108,34 +106,7 @@ export class ShowListComponent implements OnInit {
       }
     }
   }
-
+  showDetail(){
+    this.showDetailBox = true;
+  }
 }
-// if(similarTrack != undefined){
-//   if(this.artistList!=undefined){
-//     this.artistList.push(similarTrack);
-//   }
-//   else {
-//     this.artistList=[similarTrack];
-//   }
-// }
-
-// if(this.artistList!=undefined){
-//   this.artistList.push(currentTrack);
-// }
-// else{
-//   this.artistList=[currentTrack];
-// }
-
-// .subscribe(result=>{
-//   if(result!=undefined){
-//     if(result.json().resultsPage.totalEntries>0){
-//       console.log(result.json().resultsPage);
-//       if(this.artistList!=undefined){
-//         this.artistList.push(result);
-//       }
-//       else{
-//         this.artistList=[result];
-//       }
-//     }
-//   }
-// });
