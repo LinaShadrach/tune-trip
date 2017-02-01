@@ -13,6 +13,13 @@
         <br>
         <input #location>
       </div>
-    <button type="button" (click)="submitForm(artist.value, location.value);">Search</button>
+    <button type="button" (click)="search(artist.value, location.value);">Search</button>
+    <div *ngIf="done">
+      <div *ngFor="let artist of artistList">
+        <div *ngIf="artist.resultsPage.results.event">
+          <h3>{{artist.resultsPage.results.event[0].displayName}}</h3>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
