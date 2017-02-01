@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AngularFireModule } from 'angularfire2';
+// import { AgmCoreModule } from 'angular2-google-maps/core';
+
+import { googleMapAPIKey} from './api-keys';
 import { routing } from './app.routing';
 
 import { AppComponent } from './app.component';
@@ -11,7 +15,6 @@ import { AboutComponent } from './about/about.component';
 import { ShowDetailComponent } from './show-detail/show-detail.component';
 
 import { masterFirebaseConfig } from './api-keys';
-import { AngularFireModule } from 'angularfire2';
 
 
 
@@ -39,7 +42,10 @@ export const firebaseConfig = {
     FormsModule,
     HttpModule,
     routing,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    // AgmCoreModule.forRoot({
+    //   apiKey: googleMapAPIKey
+    // })
   ],
   providers: [],
   bootstrap: [AppComponent]
