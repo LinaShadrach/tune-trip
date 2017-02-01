@@ -630,7 +630,7 @@ a {
 
 .nav-right-results {
   display: flex;
-  padding: 7px;
+  padding: 13px;
   justify-content: flex-end;
   align-self: flex-end;
   align-items: flex-end; }
@@ -639,7 +639,8 @@ a {
     font-size: 1.6rem;
     letter-spacing: .3rem; }
   .nav-right-results input {
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    margin-right: 60px; }
   .nav-right-results button {
     margin-top: 20px;
     width: 25%;
@@ -652,11 +653,12 @@ a {
     background-color: #000;
     font-family: 'Orbitron', sans-serif;
     cursor: pointer;
-    margin: 0px 10px 15px 30px; }
+    margin: 0px 10px 15px 60px; }
   .nav-right-results .search {
     width: 20%;
-    height: 10%;
-    margin-right: 20px; }
+    height: 20%;
+    margin-bottom: 25px;
+    margin-right: 40px; }
 
 .results-container {
   overflow: hidden;
@@ -675,11 +677,10 @@ a {
   padding: 15px; }
 
 .resultOutput {
-  display: flex;
-  justify-content: space-around;
-  min-width: 100%;
-  min-height: 100%;
-  padding: 5px 10px; }
+  max-width: 50%;
+  max-height: 100%;
+  padding: 5px 10px;
+  overflow-y: scroll; }
   .resultOutput h2 {
     font-size: 2rem;
     color: #84d100;
@@ -690,6 +691,25 @@ a {
     color: #84d100;
     letter-spacing: 0;
     line-height: 0; }
+
+.resultList {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+  .resultList li {
+    color: #84d100;
+    font-size: 1.6rem;
+    padding: 7px;
+    font-family: 'Days One', sans-serif; }
+
+.displayLine {
+  background-color: red;
+  height: 20px;
+  width: 50%; }
+
+.map {
+  max-width: 50%;
+  min-height: 100%; }
 
 .plane {
   transform: rotate(15deg); }

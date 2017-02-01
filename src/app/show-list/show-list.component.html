@@ -9,13 +9,10 @@
       </div>
       <div class="nav-right-results">
         <div class="search">
-        <label>Artist:</label>
-        <input #artist>
-        <label>Location:</label>
-        <input #location>
-      </div>
-
-        <button type="button" (click)="search(artist.value, location.value);">Search</button>
+          <label>Location:</label>
+          <input #location>
+        </div>
+        <button type="button" (click)="search( location.value);">Search</button>
       </div>
     </div>
     <div class="results-form">
@@ -57,14 +54,15 @@
           <h4>&#9833;</h4>
         </div>
       </div> -->
-      <div *ngIf="done" class="resultOutput">
-
-      <div *ngFor="let artist of artistList">
-        <div *ngIf="artist.resultsPage.results.event">
-          <h3>{{artist.resultsPage.results.event[0].displayName}}</h3>
+        <ul>
+          <div *ngIf="done" class="resultOutput">
+            <div *ngFor="let artist of artistList">
+              <div *ngIf="artist.resultsPage.results.event" class="resultList">
+                <li class="displayline">{{artist.resultsPage.results.event[0].displayName}}</li>
+              </div>
+            </div>
         </div>
-      </div>
-    </div>
+        </ul>
     </div>
 
 
