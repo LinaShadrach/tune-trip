@@ -9,13 +9,11 @@
       </div>
       <div class="nav-right-results">
         <div class="search">
-        <label>Artist:</label>
-        <input #artist>
         <label>Location:</label>
         <input #location>
       </div>
 
-        <button type="button" (click)="search(artist.value, location.value);">Search</button>
+        <button type="button" (click)="searchWithLocation(location.value);">Search</button>
       </div>
     </div>
     <div class="results-form">
@@ -58,13 +56,12 @@
         </div>
       </div> -->
       <div *ngIf="done" class="resultOutput">
-
-      <div *ngFor="let artist of artistList">
-        <div *ngIf="artist.resultsPage.results.event">
-          <h3>{{artist.resultsPage.results.event[0].displayName}}</h3>
+        <div *ngFor="let artist of artistList">
+          <div *ngIf="artist.resultsPage.results.event">
+            <h3>{{artist.resultsPage.results.event[0].displayName}}</h3><br>
+          </div>
         </div>
       </div>
-    </div>
     </div>
 
 

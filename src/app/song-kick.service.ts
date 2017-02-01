@@ -11,7 +11,15 @@ export class SongKickService {
   constructor(private http: Http) { }
   getArtists(response){
     if(response.artist.name){
-      return this.http.get("http://api.songkick.com/api/3.0/events.json?artist_name="+ response.artist.name +"&location=sk:12283&apikey=" + songKickKey);
+      return this.http.get("http://api.songkick.com/api/3.0/events.json?artist_name="+ response.artist.name +"&location=clientip&apikey=" + songKickKey);
+    }
+    else{
+      return undefined;
+    }
+  }
+  getArtistsWithLocation(response, lat, lng){
+    if(response.artist.name){
+      return this.http.get("http://api.songkick.com/api/3.0/events.json?artist_name="+ response.artist.name +"&location=geo:"+lat+","+lng+"&apikey=" + songKickKey);
     }
     else{
       return undefined;

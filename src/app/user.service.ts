@@ -16,7 +16,7 @@ usernameVal: string;
     var userKey = this.userList.push(user).key;
     return userKey;
   }
-
+  
   getUserById(userId: string) {
     return this.af.database.object('/users/' + userId);
   }
