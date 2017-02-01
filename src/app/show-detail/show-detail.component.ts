@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-show-detail',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./show-detail.component.css']
 })
 export class ShowDetailComponent implements OnInit {
-
+  @Input() childShow;
   constructor() { }
 
   ngOnInit() {

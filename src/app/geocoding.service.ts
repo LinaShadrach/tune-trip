@@ -6,8 +6,10 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class GoecodingService {
+export class GeocodingService {
 
-  constructor() { }
-
+  constructor(private http: Http) { }
+  getLatLng(location){
+    return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?address="+location+"&key="+geoCodeKey);
+  }
 }

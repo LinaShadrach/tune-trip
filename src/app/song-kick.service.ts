@@ -17,6 +17,15 @@ export class SongKickService {
       return undefined;
     }
   }
+  getArtistsWithLocation(response, lat, lng){
+    console.log(lat+", "+lng);
+    if(response.artist.name){
+      return this.http.get("http://api.songkick.com/api/3.0/events.json?artist_name="+ response.artist.name +"&location=geo:"+lat+","+lng+"&apikey=" + songKickKey);
+    }
+    else{
+      return undefined;
+    }
+  }
 }
 
 
