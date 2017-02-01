@@ -1,0 +1,160 @@
+.rowone, .rowtwo, .rowthree, .rowfour {
+  z-index: 1;
+  position: absolute;
+  top: -20px;
+  width: 100%;
+  opacity: 0;
+}
+
+.rowone {
+  -webkit-animation: rowoneAnimation infinite 20s 5s;
+  -moz-animation: rowoneAnimation infinite 20s 5s;
+  -o-animation: rowoneAnimation infinite 20s 5s;
+  animation: rowoneAnimation infinite 20s 5s;
+}
+@-webkit-keyframes rowoneAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@-moz-keyframes rowoneAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@-o-keyframes rowoneAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@keyframes rowoneAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+.rowtwo {
+  -webkit-animation: rowtwoAnimation infinite 15s;
+  -moz-animation: rowtwoAnimation infinite 15s;
+  -o-animation: rowtwoAnimation infinite 15s;
+  animation: rowtwoAnimation infinite 15s;
+}
+@-webkit-keyframes rowtwoAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@-moz-keyframes rowtwoAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@-o-keyframes rowtwoAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@keyframes rowtwoAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+.rowthree {
+  -webkit-animation: rowthreeAnimation infinite 12s 8s;
+  -moz-animation: rowthreeAnimation infinite 12s 8s;
+  -o-animation: rowthreeAnimation infinite 12s 8s;
+  animation: rowthreeAnimation infinite 12s 8s;
+}
+@-webkit-keyframes rowthreeAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@-moz-keyframes rowthreeAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@-o-keyframes rowthreeAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@keyframes rowthreeAnimation {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+.rowfour {
+  -webkit-animation: rowfourAnimation infinite 25s 12s;
+  -moz-animation: rowfourAnimation infinite 25s 12s;
+  -o-animation: rowfourAnimation infinite 25s 12s;
+  animation: rowfourAnimation infinite 25s 12s;
+}
+@-webkit-keyframes rowfourAnimation {
+  0% {opacity: 0}
+  60% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@-moz-keyframes rowfourAnimation {
+  0% {opacity: 0}
+  60% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@-o-keyframes rowfourAnimation {
+  0% {opacity: 0}
+  60% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
+@keyframes rowfourAnimation {
+  0% {opacity: 0}
+  60% {opacity: 1}
+  100% {opacity: 0}
+  0% {transform: scale(0.2)}
+  60% {transform: scale(1)}
+  100% {transform: scale(0.2)}
+}
