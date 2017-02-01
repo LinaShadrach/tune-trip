@@ -37,6 +37,7 @@ export class ShowListComponent implements OnInit {
     this.artistList=[];
   }
 
+
   initMap(){
     var uluru = {lat: 39, lng: -100};
     var map = new google.maps.Map(document.getElementById('bikeMap'), {
@@ -101,7 +102,7 @@ export class ShowListComponent implements OnInit {
       if(this.artistList!==undefined){
           currentTrack=this.songKickService.getArtists(response.json().similartracks.track[i]).subscribe(result=>{
             if(result.json().resultsPage.status!=="error"){
-              this.artistList.push(result.json());
+
             }
         });
       }
