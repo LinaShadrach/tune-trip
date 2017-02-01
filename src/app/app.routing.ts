@@ -1,4 +1,3 @@
-
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -13,7 +12,7 @@ const appRoutes: Routes = [
     component: SplashComponent
   },
   {
-  path: 'show-list',
+  path: 'show-list/:id',
   component: ShowListComponent
   },
   {
