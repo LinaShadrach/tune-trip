@@ -1,0 +1,97 @@
+.plane {
+  transform: rotate(15deg);
+}
+.about-container {
+  position: relative;
+  // z-index: -5;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 15vh;
+  background-image: radial-gradient($lavender, $dark-gray);
+}
+
+.test {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+img {
+  width: 75px;
+  height: 75px;
+}
+.aboutForm {
+  display: flex;
+  padding-top: 25px;
+  // justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $black;
+  width: 60vw;
+  min-height: 40vh;
+  border-radius: 0px 0px 20px 20px;
+  @media (max-width: 1100px) {
+    width: 80vw;
+  }
+  @media (max-width: 825px) {
+    width: 90vw;
+  }
+}
+.aboutnav {
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $dark-gray;
+  width: 60vw;
+  height: 10vh;
+  border-radius: 20px 20px 0px 0px;
+  position: relative;
+  @media (max-width: 1100px) {
+    width: 80vw;
+  }
+  @media (max-width: 825px) {
+    width: 90vw;
+  }
+  h3 {
+    color: $lime-green;
+    align-self: center;
+  }
+  .nav-left {
+    display: flex;
+    h3 {
+      cursor: pointer;
+    }
+  }
+}
+.about {
+  font-family: 'Russo One', sans-serif;
+  // font-family: 'Days One', sans-serif;
+  color: $lime-green;
+  width: 93%;
+  height: 93%;
+  line-height: 4rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  p {
+    font-size: 1.5rem;
+    text-align: left;
+    @media (max-width: 730px) {
+      font-size: 1.2rem;
+    }
+  }
+  h6 {
+    font-size: 1.7rem;
+    @media (max-width: 730px) {
+      font-size: 1.4rem;
+    }
+  }
+  h4 {
+    font-size: 4rem;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    @media (max-width: 730px) {
+      font-size: 3rem;
+    }
+  }
+}
