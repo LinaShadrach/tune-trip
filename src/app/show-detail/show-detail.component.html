@@ -1,25 +1,23 @@
-<div class="detailgradient-container">
-
-  <div class="detail-container">
-    <div class="nav">
-      <div class="nav-left">
-        <img src="../assets/img/guitar.png">
-        <h3 routerLink="">TuneTrip</h3>
-        <img src="../assets/img/plane1.png" class="plane">
-      </div>
-      <div class="nav-right-results">
-        <h3>Artist Showtimes</h3>
+<div *ngIf="childShow">
+  <div class="detailgradient-container">
+    <div class="detail-container">
+      <!-- <div class="nav">
+        <div class="nav-left">
+          <img src="../assets/img/guitar.png">
+          <h3 routerLink="">TuneTrip</h3>
+          <img src="../assets/img/plane1.png" class="plane">
+        </div>
+        <div class="nav-right-results">
+          <h3>Artist Showtimes</h3>
+        </div>
+      </div> -->
+      <div class="detailform">
+        <div class="detailOutput">
+          <h2>{{childShow.performance[0].displayName}}</h2>
+          <h2>{{childShow.performance[0].displayName}}</h2>
+          <h2>{{childShow.start.time}}</h2>
+        </div>
       </div>
     </div>
-    <div class="detailform">
-      <div class="detailOutput">
-        <h2>Date</h2>
-        <h2>Time</h2>
-        <h2>Venue</h2>
-      </div>
-
-    </div>
-
-
   </div>
 </div>

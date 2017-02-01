@@ -25,6 +25,7 @@ export class ShowListComponent implements OnInit {
   artists;
   showResults = false;
   done=false;
+  selectedArtist=null;
 
   constructor(private router: Router, private userService: UserService, private route: ActivatedRoute, private lastFMService: LastFMService, private songKickService: SongKickService, private geocodingService: GeocodingService) { }
 
@@ -75,6 +76,7 @@ export class ShowListComponent implements OnInit {
   }
   searchWithLocation(location){
     this.artistList=[];
+    this.selectedArtist=null;
     this.done=false;
     this.topTracks = this.lastFMService.getTopTracks(this.currentUsername).subscribe(tracksData=>{
       for(var i=0; i<tracksData.json().toptracks.track.length; i++){
@@ -109,6 +111,9 @@ export class ShowListComponent implements OnInit {
         });
       }
     }
+  }
+  showDetail(artist){
+    this.selectedArtist = artist;
   }
 }
 

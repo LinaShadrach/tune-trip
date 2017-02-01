@@ -57,8 +57,11 @@
           <div *ngIf="done" class="resultOutput">
             <div *ngFor="let artist of artistList">
               <div *ngIf="artist.resultsPage.results.event" class="resultList">
-                <li class="displayline">{{artist.resultsPage.results.event[0].displayName}}</li>
+                <li (click)="showDetail(artist.resultsPage.results.event[0])" class="displayline">{{artist.resultsPage.results.event[0].displayName}}</li>
               </div>
+            </div>
+            <div *ngIf="selectedArtist">
+              <app-show-detail [childShow]="selectedArtist"></app-show-detail>
             </div>
         </div>
         </ul>
