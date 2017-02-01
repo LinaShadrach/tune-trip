@@ -37,6 +37,14 @@ export class ShowListComponent implements OnInit {
     this.artistList=[];
   }
 
+  initMap(){
+    var uluru = {lat: 39, lng: -100};
+    var map = new google.maps.Map(document.getElementById('bikeMap'), {
+      zoom: 4,
+      center: uluru
+    });
+    return map;
+  };
   searchWithLocation(location){
     this.showResults=true;
     this.done=false;
