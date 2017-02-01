@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { GoecodingService } from './goecoding.service';
+import { GeocodingService } from './geocoding.service';
 
-describe('GoecodingService', () => {
+describe('GeocodingService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [GoecodingService]
+      providers: [GeocodingService]
     });
   });
 
-  it('should ...', inject([GoecodingService], (service: GoecodingService) => {
+  it('should ...', inject([GeocodingService], (service: GeocodingService) => {
     expect(service).toBeTruthy();
   }));
 });
