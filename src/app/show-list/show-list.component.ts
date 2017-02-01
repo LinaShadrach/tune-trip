@@ -35,6 +35,7 @@ export class ShowListComponent implements OnInit {
     this.currentUsername=this.userService.setUsername(this.userId);
     this.artistList=[];
   }
+
   search(){
     this.showResults=true;
     console.log(this.artistList.length);
@@ -57,7 +58,7 @@ export class ShowListComponent implements OnInit {
             if(result.json().resultsPage.status!=="error"){
               this.artistList.push(result.json());
               if(result.json().resultsPage.results.event){
-                console.log(result.json());    
+                console.log(result.json());
               }
             }
         });
