@@ -6,8 +6,9 @@ import { Observable } from 'rxjs/Observable';
 import { GeocodingService } from '../geocoding.service';
 import { Marker } from '../marker.model';
 import { Http, Response } from '@angular/http';
+import {SebmGoogleMap, SebmGoogleMapMarker} from 'angular2-google-maps/core';
 
-
+// import { baseAddEventListeners } from '../marker.model';
 
 import { SongKickService } from '../song-kick.service';
 
@@ -22,7 +23,7 @@ import { User } from '../user.model';
 export class ShowListComponent implements OnInit {
   lat=45.5231;
   lng=-122.6765;
-  zoom: number = 13;
+  zoom: number = 9;
   userToDisplay;
   userId: string;
   currentUsername;
@@ -37,7 +38,7 @@ export class ShowListComponent implements OnInit {
   newMarker2;
   markers: Marker[]=[];
   artistNameList=[];
-
+  artistLinkList=[];
 
   constructor(private router: Router, private userService: UserService, private route: ActivatedRoute, private lastFMService: LastFMService, private songKickService: SongKickService, private geocodingService: GeocodingService, private http: Http) { }
 
@@ -49,21 +50,19 @@ export class ShowListComponent implements OnInit {
     this.currentUsername=this.userService.setUsername(this.userId);
     this.artistList=[];
     this.searchOnInit();
-    // this.getClientIp();
   }
   // sets the lat and lng on page init depending on clients ip address
+  // decided not to implement; could only retrieve ip address of internet service provider
   // getClientIp (){
   //   this.http.get("http://ipv4.myexternalip.com/json").subscribe(data=>{
-  //     console.log(data.json().ip);
   //     this.http.get("http://freegeoip.net/json/"+data.json().ip).subscribe(response=>{
-  //       console.log(response.json().latitude);
-  //       console.log(response.json().longitude);
   //
   //       this.lat=(response.json().latitude);
   //       this.lng=(response.json().longitude);
   //       });
   //   });
   // }
+
 // seaches for hits based on client's ip address; triggered on component init
   searchOnInit(){
     this.markers=[];
@@ -94,7 +93,7 @@ export class ShowListComponent implements OnInit {
             if(result.json().resultsPage.results.event){
               this.artistList.push(result.json());
               // create a marker with the lat and long of the venue
-              var newMarker = new Marker(result.json().resultsPage.results.event[0].venue.lat, result.json().resultsPage.results.event[0].venue.lng, result.json().resultsPage.results.event[0].venue.displayName);
+              var newMarker = new Marker(result.json().resultsPage.results.event[0].venue.lat, result.json().resultsPage.results.event[0].venue.lng, " ", result.json().resultsPage.results.event[0].venue.displayName);
               this.markers.push(newMarker);
             }
           },
@@ -104,7 +103,7 @@ export class ShowListComponent implements OnInit {
         }
     }
   }
-// searches for hits with location entered by user; triggered by search button
+// searches for hits with location entered by user; triggered by search button (same logic as above but does not use hardcoded location values)
   searchWithLocation(location){
     this.markers=[];
     this.artistList=[];
@@ -135,9 +134,8 @@ export class ShowListComponent implements OnInit {
           if(result.json().resultsPage.results.event){
             this.artistList.push(result.json());
             // create a marker with the lat and long of the venue
-            var newMarker = new Marker(result.json().resultsPage.results.event[0].venue.lat, result.json().resultsPage.results.event[0].venue.lng, result.json().resultsPage.results.event[0].venue.displayName);
+            var newMarker = new Marker(result.json().resultsPage.results.event[0].venue.lat, result.json().resultsPage.results.event[0].venue.lng, " ", result.json().resultsPage.results.event[0].venue.displayName);
             this.markers.push(newMarker);
-            console.log(result.json())
           }
         },
         errorCatch => {
@@ -148,7 +146,18 @@ export class ShowListComponent implements OnInit {
   showDetail(artist){
     this.selectedArtist = artist;
   }
+  mouseOnShow(venueName, i){
+    this.markers[i].label = venueName;
+  }
+  mouseOffShow(i){
+    this.markers[i].label= " ";
+  }
+  markerMouseOver(i){
+    this.markers[i].label = this.artistList[i].resultsPage.results.event[i].venue.displayName;
+  }
   clickMarker(i){
     this.selectedArtist=this.artistList[i].resultsPage.results.event[0];
   }
+
+
 }
