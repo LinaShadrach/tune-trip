@@ -1,6 +1,6 @@
 # Tune-Trip
 
- Give you near by recommended concerts, 1/30/2017
+ This application recommends concerts to users based on their lastFM user information, 1/30/2017
 
  By [Kevin Finley](http://www.kfinley.com), Eric Raetz, Alex Francois, Lina Shadrach
 
