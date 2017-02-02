@@ -80,7 +80,7 @@
     </div>
 
     <div *ngIf="selectedArtist">
-      <app-show-detail [childShow]="selectedArtist"></app-show-detail>
+      <app-show-detail [childShow]="selectedArtist" class="show-hover"></app-show-detail>
     </div>
   </div>
   <div>
@@ -90,7 +90,7 @@
     [zoom]="zoom">
     <sebm-google-map-marker
           *ngFor="let m of markers; let i = index"
-          (markerClick)="hoverMarker(m.label, i)"
+          (markerClick)="clickMarker(i)"
           [latitude]="m.latitude"
           [longitude]="m.longitude"
           [label]="m.label">

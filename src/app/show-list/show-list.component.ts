@@ -147,4 +147,7 @@ export class ShowListComponent implements OnInit {
   showDetail(artist){
     this.selectedArtist = artist;
   }
+  clickMarker(i){
+    this.selectedArtist=this.artistList[i].resultsPage.results.event[0];
+  }
 }
