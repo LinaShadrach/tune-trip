@@ -674,7 +674,8 @@ a {
   min-height: 40vh;
   border-radius: 0px 0px 20px 20px;
   font-family: 'Orbitron', sans-serif;
-  padding: 15px; }
+  padding: 15px;
+  z-index: 20; }
 
 ::-webkit-scrollbar {
   width: 12px; }
@@ -711,7 +712,8 @@ a {
     color: #84d100;
     font-size: 1.6rem;
     padding: 7px;
-    font-family: 'Days One', sans-serif; }
+    font-family: 'Days One', sans-serif;
+    cursor: pointer; }
 
 .displayLine {
   background-color: red;
@@ -812,11 +814,14 @@ img {
 .detailform {
   display: flex;
   align-items: center;
-  background-image: radial-gradient(#e0e0e0, #b6a4d8);
+  background-image: linear-gradient(#b6a4d8, #323331);
+  border: 5px solid #000;
+  border-top: none;
+  z-index: -10;
   width: 50vw;
   min-height: 20vh;
   border-radius: 0px 0px 20px 20px;
-  color: #323331;
+  color: #000;
   font-family: 'Days One', sans-serif;
   padding: 15px;
   -webkit-animation: detailSliderAnimation 3s;
@@ -828,7 +833,7 @@ img {
     font-size: 2.5rem; }
   .detailform a {
     font-size: 2.5rem;
-    color: #323331;
+    color: #000;
     text-decoration: underline; }
 
 @-webkit-keyframes detailSliderAnimation {
@@ -837,36 +842,36 @@ img {
   100% {
     opacity: 1; }
   0% {
-    transform: translateY(0%); }
+    transform: translateY(-150%); }
   100% {
-    transform: translateY(100%); } }
+    transform: translateY(0%); } }
 @-moz-keyframes detailSliderAnimation {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; }
   0% {
-    transform: translateY(0%); }
+    transform: translateY(-150%); }
   100% {
-    transform: translateY(100%); } }
+    transform: translateY(0%); } }
 @-o-keyframes detailSliderAnimation {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; }
   0% {
-    transform: translateY(0%); }
+    transform: translateY(-150%); }
   100% {
-    transform: translateY(100%); } }
+    transform: translateY(0%); } }
 @keyframes detailSliderAnimation {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; }
   0% {
-    transform: translateY(0%); }
+    transform: translateY(-150%); }
   100% {
-    transform: translateY(100%); } }
+    transform: translateY(0%); } }
 .detailOutput {
   min-width: 100%;
   min-height: 100%;

@@ -38,15 +38,18 @@
 .detailform {
   display: flex;
   align-items: center;
-  background-image: radial-gradient($smoke-gray, $lavender);
+  background-image: linear-gradient($lavender, $dark-gray);
+  border: 5px solid $black;
+  border-top: none;
   // position: absolute;
   // opacity: 0;
   // bottom: 20vh;
   // overflow-y: hidden;
+  z-index: -10;
   width: 50vw;
   min-height: 20vh;
   border-radius: 0px 0px 20px 20px;
-  color: $dark-gray;
+  color: $black;
   font-family: 'Days One', sans-serif;
   padding: 15px;
   -webkit-animation: detailSliderAnimation 3s;
@@ -59,7 +62,7 @@
   }
   a {
     font-size: 2.5rem;
-    color: $dark-gray;
+    color: $black;
     text-decoration: underline;
   }
 }
@@ -67,26 +70,26 @@
 @-webkit-keyframes detailSliderAnimation {
   0% {opacity: 0}
   100% {opacity: 1}
-  0% {transform: translateY(0%)}
-  100% {transform: translateY(100%)}
+  0% {transform: translateY(-150%)}
+  100% {transform: translateY(0%)}
 }
 @-moz-keyframes detailSliderAnimation {
   0% {opacity: 0}
   100% {opacity: 1}
-  0% {transform: translateY(0%)}
-  100% {transform: translateY(100%)}
+  0% {transform: translateY(-150%)}
+  100% {transform: translateY(0%)}
 }
 @-o-keyframes detailSliderAnimation {
   0% {opacity: 0}
   100% {opacity: 1}
-  0% {transform: translateY(0%)}
-  100% {transform: translateY(100%)}
+  0% {transform: translateY(-150%)}
+  100% {transform: translateY(0%)}
 }
 @keyframes detailSliderAnimation {
   0% {opacity: 0}
   100% {opacity: 1}
-  0% {transform: translateY(0%)}
-  100% {transform: translateY(100%)}
+  0% {transform: translateY(-150%)}
+  100% {transform: translateY(0%)}
 }
 .detailOutput {
   min-width: 100%;
