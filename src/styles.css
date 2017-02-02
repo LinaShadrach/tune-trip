@@ -322,6 +322,12 @@ a {
 
 .userForm {
   font-family: 'Orbitron', sans-serif; }
+  .userForm p {
+    font-size: 1.5rem;
+    text-align: left;
+    font-family: 'Orbitron', sans-serif;
+    color: #84d100;
+    margin-top: 20px; }
 
 .nav {
   font-family: 'Orbitron', sans-serif; }
@@ -377,6 +383,9 @@ a {
 img {
   width: 75px;
   height: 75px; }
+  @media (max-width: 725px) {
+    img {
+      display: none; } }
 
 .userForm {
   position: relative;
@@ -653,6 +662,15 @@ a {
       justify-content: center;
       width: 60vw;
       padding-top: 20px; } }
+  @media (max-width: 725px) {
+    .nav-results {
+      width: 80vw;
+      margin-top: 15px; } }
+
+.clock {
+  width: 23vw;
+  margin: 0px auto;
+  margin-top: 3%; }
 
 .nav-right-results {
   display: flex;
@@ -671,6 +689,10 @@ a {
       justify-content: center;
       width: 60vw;
       margin-top: 15px; } }
+  @media (max-width: 725px) {
+    .nav-right-results {
+      flex-direction: column;
+      width: 80vw; } }
   .nav-right-results label {
     color: #84d100;
     font-size: 1.6rem;
@@ -684,8 +706,11 @@ a {
   .nav-right-results .search {
     width: 20%;
     height: 20%;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
     margin-right: 40px; }
+    @media (max-width: 1250px) {
+      .nav-right-results .search {
+        margin-bottom: 20px; } }
   .nav-right-results .button-nav {
     display: flex;
     align-items: flex-end; }
@@ -709,7 +734,8 @@ a {
       background-color: #000;
       font-family: 'Orbitron', sans-serif;
       cursor: pointer;
-      margin: 0px 10px 15px 20px; }
+      margin: 0px 10px 15px 20px;
+      height: 50px; }
       @media (max-width: 1425px) {
         .nav-right-results .button-nav button {
           width: 75%;
@@ -732,6 +758,13 @@ a {
   font-family: 'Orbitron', sans-serif;
   padding: 15px;
   z-index: 20; }
+  @media (max-width: 1000px) {
+    .results-form {
+      display: flex;
+      flex-direction: column; } }
+  @media (max-width: 725px) {
+    .results-form {
+      width: 80vw; } }
 
 ::-webkit-scrollbar {
   width: 12px; }
@@ -749,6 +782,9 @@ a {
   max-height: 500px;
   padding: 5px 10px;
   overflow-y: scroll; }
+  @media (max-width: 1000px) {
+    .resultOutput {
+      max-width: 100%; } }
   .resultOutput h2 {
     font-size: 2rem;
     color: #84d100;
