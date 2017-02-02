@@ -65,9 +65,22 @@
         </ul>
     </div>
 
-
     <div *ngIf="selectedArtist">
       <app-show-detail [childShow]="selectedArtist"></app-show-detail>
     </div>
   </div>
+  <div>
+  <sebm-google-map *ngIf="done"
+    [latitude]="lat"
+    [longitude]="lng"
+    [zoom]="zoom">
+    <sebm-google-map-marker
+          *ngFor="let m of markers; let i = index"
+          (markerClick)="clickedMarker(m.label, i)"
+          [latitude]="m.latitude"
+          [longitude]="m.longitude"
+          [label]="m.label">
+    </sebm-google-map-marker>
+  </sebm-google-map>
+</div>
 </div>
