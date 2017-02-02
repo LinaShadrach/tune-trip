@@ -323,7 +323,7 @@ a {
 .userForm {
   font-family: 'Orbitron', sans-serif; }
   .userForm p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-align: left;
     font-family: 'Orbitron', sans-serif;
     color: #84d100;
@@ -818,7 +818,13 @@ a {
 
 .sebm-google-map-container {
   height: 40vh;
-  width: 100%; }
+  width: 30vw; }
+  @media (max-width: 1000px) {
+    .sebm-google-map-container {
+      width: 57vw; } }
+  @media (max-width: 725px) {
+    .sebm-google-map-container {
+      width: 100%; } }
 
 .plane {
   transform: rotate(15deg); }
@@ -920,10 +926,10 @@ img {
   color: #000;
   font-family: 'Days One', sans-serif;
   padding: 15px;
-  -webkit-animation: detailSliderAnimation 3s;
-  -moz-animation: detailSliderAnimation 3s;
-  -o-animation: detailSliderAnimation 3s;
-  animation: detailSliderAnimation 3s; }
+  -webkit-animation: detailSliderAnimation 12s;
+  -moz-animation: detailSliderAnimation 12s;
+  -o-animation: detailSliderAnimation 12s;
+  animation: detailSliderAnimation 12s; }
   .detailform li {
     text-align: center;
     font-size: 2.5rem; }
@@ -935,39 +941,71 @@ img {
 @-webkit-keyframes detailSliderAnimation {
   0% {
     opacity: 0; }
-  100% {
+  20% {
     opacity: 1; }
+  80% {
+    opacity: 1; }
+  100% {
+    opacity: 0; }
   0% {
     transform: translateY(-150%); }
+  20% {
+    transform: translateY(0%); }
+  80% {
+    transform: translateY(0%); }
   100% {
-    transform: translateY(0%); } }
+    transform: translateY(-150%); } }
 @-moz-keyframes detailSliderAnimation {
   0% {
     opacity: 0; }
-  100% {
+  20% {
     opacity: 1; }
+  80% {
+    opacity: 1; }
+  100% {
+    opacity: 0; }
   0% {
     transform: translateY(-150%); }
+  20% {
+    transform: translateY(0%); }
+  80% {
+    transform: translateY(0%); }
   100% {
-    transform: translateY(0%); } }
+    transform: translateY(-150%); } }
 @-o-keyframes detailSliderAnimation {
   0% {
     opacity: 0; }
-  100% {
+  20% {
     opacity: 1; }
+  80% {
+    opacity: 1; }
+  100% {
+    opacity: 0; }
   0% {
     transform: translateY(-150%); }
+  20% {
+    transform: translateY(0%); }
+  80% {
+    transform: translateY(0%); }
   100% {
-    transform: translateY(0%); } }
+    transform: translateY(-150%); } }
 @keyframes detailSliderAnimation {
   0% {
     opacity: 0; }
-  100% {
+  20% {
     opacity: 1; }
+  80% {
+    opacity: 1; }
+  100% {
+    opacity: 0; }
   0% {
     transform: translateY(-150%); }
+  20% {
+    transform: translateY(0%); }
+  80% {
+    transform: translateY(0%); }
   100% {
-    transform: translateY(0%); } }
+    transform: translateY(-150%); } }
 .detailOutput {
   min-width: 100%;
   min-height: 100%;

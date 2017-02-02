@@ -52,10 +52,10 @@
   color: $black;
   font-family: 'Days One', sans-serif;
   padding: 15px;
-  -webkit-animation: detailSliderAnimation 3s;
-  -moz-animation: detailSliderAnimation 3s;
-  -o-animation: detailSliderAnimation 3s;
-  animation: detailSliderAnimation 3s;
+  -webkit-animation: detailSliderAnimation 12s;
+  -moz-animation: detailSliderAnimation 12s;
+  -o-animation: detailSliderAnimation 12s;
+  animation: detailSliderAnimation 12s;
   li {
     text-align: center;
     font-size: 2.5rem;
@@ -69,27 +69,43 @@
 
 @-webkit-keyframes detailSliderAnimation {
   0% {opacity: 0}
-  100% {opacity: 1}
+  20% {opacity: 1}
+  80% {opacity: 1}
+  100% {opacity: 0}
   0% {transform: translateY(-150%)}
-  100% {transform: translateY(0%)}
+  20% {transform: translateY(0%)}
+  80% {transform: translateY(0%)}
+  100% {transform: translateY(-150%)}
 }
 @-moz-keyframes detailSliderAnimation {
   0% {opacity: 0}
-  100% {opacity: 1}
+  20% {opacity: 1}
+  80% {opacity: 1}
+  100% {opacity: 0}
   0% {transform: translateY(-150%)}
-  100% {transform: translateY(0%)}
+  20% {transform: translateY(0%)}
+  80% {transform: translateY(0%)}
+  100% {transform: translateY(-150%)}
 }
 @-o-keyframes detailSliderAnimation {
   0% {opacity: 0}
-  100% {opacity: 1}
+  20% {opacity: 1}
+  80% {opacity: 1}
+  100% {opacity: 0}
   0% {transform: translateY(-150%)}
-  100% {transform: translateY(0%)}
+  20% {transform: translateY(0%)}
+  80% {transform: translateY(0%)}
+  100% {transform: translateY(-150%)}
 }
 @keyframes detailSliderAnimation {
   0% {opacity: 0}
-  100% {opacity: 1}
+  20% {opacity: 1}
+  80% {opacity: 1}
+  100% {opacity: 0}
   0% {transform: translateY(-150%)}
-  100% {transform: translateY(0%)}
+  20% {transform: translateY(0%)}
+  80% {transform: translateY(0%)}
+  100% {transform: translateY(-150%)}
 }
 .detailOutput {
   min-width: 100%;
