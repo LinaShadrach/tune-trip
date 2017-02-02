@@ -1,50 +1,10 @@
-// .detailgradient-container {
-//   width: 100vw;
-//   min-height: 100vh;
-//   margin-top: 0;
-//   padding-top: 15vh;
-//   background-image: radial-gradient($lime-green, $dark-gray);
-// }
-// .nav-right-results {
-//   display: flex;
-//   padding: 7px;
-//   justify-content: flex-end;
-//   align-self: flex-end;
-//   align-items: flex-end;
-//   label {
-//     color: $lime-green;
-//     font-size: 1.6rem;
-//     letter-spacing: .3rem;
-//   }
-//   input {
-//     margin-bottom: 10px;
-//   }
-//   button {
-//     @include button($black);
-//     margin: 0px 10px 15px 30px;
-//  }
-//   .search {
-//     width: 20%;
-//     height: 10%;
-//     margin-right: 20px;
-//   }
-// }
-// .detail-container {
-//   overflow: hidden;
-//   display: flex;
-//   align-items: center;
-//   flex-direction: column;
-// }
+
 .detailform {
   display: flex;
   align-items: center;
   background-image: linear-gradient($lavender, $dark-gray);
   border: 5px solid $black;
   border-top: none;
-  // position: absolute;
-  // opacity: 0;
-  // bottom: 20vh;
-  // overflow-y: hidden;
   z-index: -10;
   width: 50vw;
   min-height: 20vh;
@@ -52,10 +12,10 @@
   color: $black;
   font-family: 'Days One', sans-serif;
   padding: 15px;
-  -webkit-animation: detailSliderAnimation 12s;
-  -moz-animation: detailSliderAnimation 12s;
-  -o-animation: detailSliderAnimation 12s;
-  animation: detailSliderAnimation 12s;
+  -webkit-animation: detailSliderAnimation 4s;
+  -moz-animation: detailSliderAnimation 4s;
+  -o-animation: detailSliderAnimation 4s;
+  animation: detailSliderAnimation 4s;
   li {
     text-align: center;
     font-size: 2.5rem;
@@ -69,43 +29,27 @@
 
 @-webkit-keyframes detailSliderAnimation {
   0% {opacity: 0}
-  20% {opacity: 1}
-  80% {opacity: 1}
-  100% {opacity: 0}
+  100% {opacity: 1}
   0% {transform: translateY(-150%)}
-  20% {transform: translateY(0%)}
-  80% {transform: translateY(0%)}
-  100% {transform: translateY(-150%)}
+  100% {transform: translateY(0%)}
 }
 @-moz-keyframes detailSliderAnimation {
   0% {opacity: 0}
-  20% {opacity: 1}
-  80% {opacity: 1}
-  100% {opacity: 0}
+  100% {opacity: 1}
   0% {transform: translateY(-150%)}
-  20% {transform: translateY(0%)}
-  80% {transform: translateY(0%)}
-  100% {transform: translateY(-150%)}
+  100% {transform: translateY(0%)}
 }
 @-o-keyframes detailSliderAnimation {
   0% {opacity: 0}
-  20% {opacity: 1}
-  80% {opacity: 1}
-  100% {opacity: 0}
+  100% {opacity: 1}
   0% {transform: translateY(-150%)}
-  20% {transform: translateY(0%)}
-  80% {transform: translateY(0%)}
-  100% {transform: translateY(-150%)}
+  100% {transform: translateY(0%)}
 }
 @keyframes detailSliderAnimation {
   0% {opacity: 0}
-  20% {opacity: 1}
-  80% {opacity: 1}
-  100% {opacity: 0}
+  100% {opacity: 1}
   0% {transform: translateY(-150%)}
-  20% {transform: translateY(0%)}
-  80% {transform: translateY(0%)}
-  100% {transform: translateY(-150%)}
+  100% {transform: translateY(0%)}
 }
 .detailOutput {
   min-width: 100%;

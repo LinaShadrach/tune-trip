@@ -56,7 +56,6 @@
           <h4>&#9833;</h4>
         </div>
       </div>
-
           <ul *ngIf="done" class="resultOutput">
             <div *ngFor="let artist of artistList">
               <div *ngIf="artist.resultsPage.results.event" class="resultList">
@@ -64,7 +63,6 @@
               </div>
             </div>
         </ul>
-
         <sebm-google-map *ngIf="done"
           [latitude]="lat"
           [longitude]="lng"
@@ -78,7 +76,6 @@
           </sebm-google-map-marker>
         </sebm-google-map>
     </div>
-
     <div *ngIf="selectedArtist">
       <app-show-detail [childShow]="selectedArtist" class="show-hover"></app-show-detail>
     </div>

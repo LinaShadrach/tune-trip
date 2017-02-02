@@ -51,7 +51,6 @@
   align-items: flex-end;
   font-family: 'Orbitron', sans-serif;
   @media (max-width: 1425px) {
-    // justify-content: center;
     align-items: center;
   }
   @media (max-width: 1250px) {
@@ -88,7 +87,6 @@
   }
   .button-nav {
     display: flex;
-    // height: 100%;
     align-items: flex-end;
     @media (max-width: 1425px) {
       flex-direction: column;
@@ -190,9 +188,9 @@
   max-width: 50%;
   min-height: 100%;
 }
-
 .sebm-google-map-container {
   height: 40vh;
+  border-radius: 10px;
   width: 30vw;
   @media (max-width: 1000px) {
     width: 57vw;

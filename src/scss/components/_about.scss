@@ -3,27 +3,27 @@
 }
 .about-container {
   position: relative;
-  // z-index: -5;
   width: 100vw;
   min-height: 100vh;
   padding-top: 15vh;
   background-image: radial-gradient($lavender, $dark-gray);
 }
-
 .test {
   overflow: hidden;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-img {
+.about-image {
   width: 75px;
   height: 75px;
+  @media (max-width: 725px) {
+    display: block;
+  }
 }
 .aboutForm {
   display: flex;
   padding-top: 25px;
-  // justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: $black;
@@ -62,11 +62,14 @@ img {
     h3 {
       cursor: pointer;
     }
+    @media (max-width: 725px) {
+      width: 90vw;
+      justify-content: center;
+    }
   }
 }
 .about {
   font-family: 'Russo One', sans-serif;
-  // font-family: 'Days One', sans-serif;
   color: $lime-green;
   width: 93%;
   height: 93%;
