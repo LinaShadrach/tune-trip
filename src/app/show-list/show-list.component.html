@@ -1,7 +1,7 @@
 <div class="gradient-container">
   <div class="results-container">
-    <div class="nav">
-      <div class="nav-left">
+    <div class="nav-results">
+      <div class="nav-left-results">
         <img src="../assets/img/guitar.png">
         <h3 routerLink="">TuneTrip</h3>
         <img src="../assets/img/plane1.png" class="plane">
@@ -11,8 +11,10 @@
           <label>Location:</label>
           <input #location>
         </div>
-        <button type="button" (click)="searchWithLocation(location.value);">Search</button>
-        <button type="button">Signout</button>
+        <div class="button-nav">
+          <button type="button" (click)="searchWithLocation(location.value);">Search</button>
+          <button routerLink="" type="button">Signout</button>
+        </div>
       </div>
     </div>
     <div class="results-form">
@@ -54,15 +56,27 @@
           <h4>&#9833;</h4>
         </div>
       </div> -->
-        <ul>
-          <div *ngIf="done" class="resultOutput">
+
+          <ul *ngIf="done" class="resultOutput">
             <div *ngFor="let artist of artistList">
               <div *ngIf="artist.resultsPage.results.event" class="resultList">
                 <li (click)="showDetail(artist.resultsPage.results.event[0])" class="displayline">{{artist.resultsPage.results.event[0].displayName}}</li>
               </div>
             </div>
-        </div>
         </ul>
+
+        <sebm-google-map *ngIf="done"
+          [latitude]="lat"
+          [longitude]="lng"
+          [zoom]="zoom">
+          <sebm-google-map-marker
+                *ngFor="let m of markers; let i = index"
+                (markerClick)="clickedMarker(m.label, i)"
+                [latitude]="m.latitude"
+                [longitude]="m.longitude"
+                [label]=" ">
+          </sebm-google-map-marker>
+        </sebm-google-map>
     </div>
 
     <div *ngIf="selectedArtist">
@@ -83,4 +97,5 @@
     </sebm-google-map-marker>
   </sebm-google-map>
 </div>
+
 </div>

@@ -5,12 +5,55 @@
   padding-top: 15vh;
   background-image: radial-gradient($lime-green, $dark-gray);
 }
+.nav-results {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $dark-gray;
+  width: 60vw;
+  height: 10vh;
+  border-radius: 20px 20px 0px 0px;
+  position: relative;
+  h3 {
+    color: $lime-green;
+    align-self: center;
+    font-family: 'Orbitron', sans-serif;
+  }
+  .nav-left-results {
+    display: flex;
+    }
+  @media (max-width: 1250px) {
+    height: 15vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+    padding-top: 20px;
+  }
+
+}
+
+
 .nav-right-results {
   display: flex;
   padding: 13px;
+  height: 100%;
   justify-content: flex-end;
   align-self: flex-end;
   align-items: flex-end;
+  font-family: 'Orbitron', sans-serif;
+  @media (max-width: 1425px) {
+    // justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 1250px) {
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+    margin-top: 15px;
+  }
   label {
     color: $lime-green;
     font-size: 1.6rem;
@@ -19,16 +62,38 @@
   input {
     margin-bottom: 10px;
     margin-right: 60px;
+    @media (max-width: 1450px) {
+      margin-right: 40px;
+    }
   }
-  button {
-    @include button($black);
-    margin: 0px 10px 15px 20px;
- }
   .search {
     width: 20%;
     height: 20%;
     margin-bottom: 25px;
     margin-right: 40px;
+  }
+  .button-nav {
+    display: flex;
+    // height: 100%;
+    align-items: flex-end;
+    @media (max-width: 1425px) {
+      flex-direction: column;
+      margin-top: 15px;
+    }
+    @media (max-width: 1250px) {
+      flex-direction: row;
+      align-items: center;
+    }
+    button {
+      @include button($black);
+      margin: 0px 10px 15px 20px;
+      @media (max-width: 1425px) {
+        width: 75%;
+        height: 45px;
+        font-size: 1.6rem;
+
+      }
+    }
   }
 }
 .results-container {
@@ -101,4 +166,9 @@
 .map {
   max-width: 50%;
   min-height: 100%;
+}
+
+.sebm-google-map-container {
+  height: 40vh;
+  width: 100%;
 }
