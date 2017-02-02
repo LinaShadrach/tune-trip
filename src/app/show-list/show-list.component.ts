@@ -5,6 +5,8 @@ import { LastFMService } from '../last-fm.service';
 import { Observable } from 'rxjs/Observable';
 import { GeocodingService } from '../geocoding.service';
 import { Marker } from '../marker.model';
+import 'rxjs/add/operator/catch';
+
 
 import { SongKickService } from '../song-kick.service';
 
@@ -33,6 +35,7 @@ export class ShowListComponent implements OnInit {
   newMarker: Marker;
   newMarker2;
   markers: Marker[]=[];
+  artistNameList=[];
 
 
   constructor(private router: Router, private userService: UserService, private route: ActivatedRoute, private lastFMService: LastFMService, private songKickService: SongKickService, private geocodingService: GeocodingService) { }
@@ -46,16 +49,17 @@ export class ShowListComponent implements OnInit {
     this.artistList=[];
     this.searchOnInit();
   }
-// seaches for hits swpwnsing on client's ip address; triggered on init
+// seaches for hits based on client's ip address; triggered on component init
   searchOnInit(){
     this.markers=[];
+    this.artistNameList=[];
     // api  call to get from lastfm the users top tracks
-    this.topTracks = this.lastFMService.getTopTracks(this.currentUsername).subscribe(data=>{
+    this.topTracks = this.lastFMService.getTopTracks(this.currentUsername).subscribe(topTracksData=>{
       // for each of the user's top tracks, make an api call to lastfm to get similar tracks
-      for(var i=0; i<data.json().toptracks.track.length; i++){
-        this.lastFMService.getSimilarTracks(data.json().toptracks.track[i]).subscribe(response=>{
-          this.getArtistsInit(response);
-          if(i=data.json().toptracks.track.length-1){
+      for(var i=0; i<topTracksData.json().toptracks.track.length; i++){
+        this.lastFMService.getSimilarTracks(topTracksData.json().toptracks.track[i]).subscribe(similarTracksData=>{
+          this.getArtistsInit(similarTracksData);
+          if(i=topTracksData.json().toptracks.track.length-1){
             this.done=true;
           }
         });
@@ -63,12 +67,14 @@ export class ShowListComponent implements OnInit {
     });
   }
  // receives input from searchOnInit; uses information to get shows in user's current location
-  getArtistsInit(response){
+  getArtistsInit(similarTracksData){
     var currentTrack;
     // for each of the similar tracks, get the artist and make an api call to songKick to see if they are playing in that area
-    for(var i=0; i<response.json().similartracks.track.length; i++){
+    for(var i=0; i<similarTracksData.json().similartracks.track.length; i++){
         // api call to songKick to check if artist is playing in area
-          currentTrack=this.songKickService.getArtists(response.json().similartracks.track[i]).subscribe(result=>{
+          if(this.artistNameList.indexOf(similarTracksData.json().similartracks.track[i].artist.name)===-1){
+            this.artistNameList.push(similarTracksData.json().similartracks.track[i].artist.name);
+            currentTrack=this.songKickService.getArtists(similarTracksData.json().similartracks.track[i]).subscribe(result=>{
               this.artistList.push(result.json());
               // check to make sure the event exists
               if(result.json().resultsPage.results.event){
@@ -76,7 +82,13 @@ export class ShowListComponent implements OnInit {
                 var newMarker = new Marker(result.json().resultsPage.results.event[0].venue.lat, result.json().resultsPage.results.event[0].venue.lng, result.json().resultsPage.results.event[0].venue.displayName);
                 this.markers.push(newMarker);
               }
-        });
+            },
+            errorCatch => {
+              // don't print error to console if there is a bad request
+            });
+
+
+          }
     }
   }
 // searches for hits with location entered by user; triggered by search button
