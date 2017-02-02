@@ -74,7 +74,7 @@
                 (markerClick)="clickMarker(i)"
                 [latitude]="m.latitude"
                 [longitude]="m.longitude"
-                [label]=" ">
+                [label]="m.label">
           </sebm-google-map-marker>
         </sebm-google-map>
     </div>
@@ -84,18 +84,6 @@
     </div>
   </div>
   <div>
-  <!-- <sebm-google-map *ngIf="done"
-    [latitude]="lat"
-    [longitude]="lng"
-    [zoom]="zoom">
-    <sebm-google-map-marker
-          *ngFor="let m of markers; let i = index"
-          (markerClick)="clickMarker(i)"
-          [latitude]="m.latitude"
-          [longitude]="m.longitude"
-          [label]="m.label">
-    </sebm-google-map-marker>
-  </sebm-google-map> -->
 </div>
 
 </div>
