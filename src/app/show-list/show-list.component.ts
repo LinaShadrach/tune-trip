@@ -71,24 +71,22 @@ export class ShowListComponent implements OnInit {
     var currentTrack;
     // for each of the similar tracks, get the artist and make an api call to songKick to see if they are playing in that area
     for(var i=0; i<similarTracksData.json().similartracks.track.length; i++){
-        // api call to songKick to check if artist is playing in area
-          if(this.artistNameList.indexOf(similarTracksData.json().similartracks.track[i].artist.name)===-1){
-            this.artistNameList.push(similarTracksData.json().similartracks.track[i].artist.name);
-            currentTrack=this.songKickService.getArtists(similarTracksData.json().similartracks.track[i]).subscribe(result=>{
+      // api call to songKick to check if artist is playing in area
+        if(this.artistNameList.indexOf(similarTracksData.json().similartracks.track[i].artist.name)===-1){
+          this.artistNameList.push(similarTracksData.json().similartracks.track[i].artist.name);
+          currentTrack=this.songKickService.getArtists(similarTracksData.json().similartracks.track[i]).subscribe(result=>{
+            // check to make sure the event exists
+            if(result.json().resultsPage.results.event){
               this.artistList.push(result.json());
-              // check to make sure the event exists
-              if(result.json().resultsPage.results.event){
-                // create a marker with the lat and long of the venue
-                var newMarker = new Marker(result.json().resultsPage.results.event[0].venue.lat, result.json().resultsPage.results.event[0].venue.lng, result.json().resultsPage.results.event[0].venue.displayName);
-                this.markers.push(newMarker);
-              }
-            },
-            errorCatch => {
-              // don't print error to console if there is a bad request
-            });
-
-
-          }
+              // create a marker with the lat and long of the venue
+              var newMarker = new Marker(result.json().resultsPage.results.event[0].venue.lat, result.json().resultsPage.results.event[0].venue.lng, result.json().resultsPage.results.event[0].venue.displayName);
+              this.markers.push(newMarker);
+            }
+          },
+          errorCatch => {
+            // don't print error to console if there is a bad request
+          });
+        }
     }
   }
 // searches for hits with location entered by user; triggered by search button
@@ -97,11 +95,14 @@ export class ShowListComponent implements OnInit {
     this.artistList=[];
     this.selectedArtist=null;
     this.done=false;
+    this.artistNameList=[];
     this.topTracks = this.lastFMService.getTopTracks(this.currentUsername).subscribe(tracksData=>{
       for(var i=0; i<tracksData.json().toptracks.track.length; i++){
         this.lastFMService.getSimilarTracks(tracksData.json().toptracks.track[i]).subscribe(similarTrackData=>{
           this.geocodingService.getLatLng(location).subscribe(locationData=>{
             this.getArtists(similarTrackData, locationData.json().results[0].geometry.location.lat, locationData.json().results[0].geometry.location.lng);
+            this.lat = locationData.json().results[0].geometry.location.lat;
+            this.lng = locationData.json().results[0].geometry.location.lng;
           });
           if(i=tracksData.json().toptracks.track.length-1){
             this.done=true;
@@ -110,17 +111,22 @@ export class ShowListComponent implements OnInit {
       };
     });
   }
-  getArtists(response, lat, lng){
+  getArtists(similarTracksData, lat, lng){
     var currentTrack;
-    for(var i=0; i<response.json().similartracks.track.length; i++){
-      currentTrack=this.songKickService.getArtistsWithLocation(response.json().similartracks.track[i], lat, lng).subscribe(result=>{
-        if(result.json().resultsPage.results.event){
-          this.artistList.push(result.json());
-          // create a marker with the lat and long of the venue
-          var newMarker = new Marker(result.json().resultsPage.results.event[0].venue.lat, result.json().resultsPage.results.event[0].venue.lng, result.json().resultsPage.results.event[0].venue.displayName);
-          this.markers.push(newMarker);
-        }
-      });
+    for(var i=0; i<similarTracksData.json().similartracks.track.length; i++){
+      if(this.artistNameList.indexOf(similarTracksData.json().similartracks.track[i].artist.name)===-1){
+        this.artistNameList.push(similarTracksData.json().similartracks.track[i].artist.name);
+        currentTrack=this.songKickService.getArtistsWithLocation(similarTracksData.json().similartracks.track[i], lat, lng).subscribe(result=>{
+          if(result.json().resultsPage.results.event){
+            this.artistList.push(result.json());
+            // create a marker with the lat and long of the venue
+            var newMarker = new Marker(result.json().resultsPage.results.event[0].venue.lat, result.json().resultsPage.results.event[0].venue.lng, result.json().resultsPage.results.event[0].venue.displayName);
+            this.markers.push(newMarker);
+          }
+        },
+        errorCatch => {
+        });
+      }
     }
   }
   showDetail(artist){

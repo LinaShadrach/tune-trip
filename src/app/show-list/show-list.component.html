@@ -76,7 +76,7 @@
     [zoom]="zoom">
     <sebm-google-map-marker
           *ngFor="let m of markers; let i = index"
-          (markerClick)="clickedMarker(m.label, i)"
+          (markerClick)="hoverMarker(m.label, i)"
           [latitude]="m.latitude"
           [longitude]="m.longitude"
           [label]="m.label">
