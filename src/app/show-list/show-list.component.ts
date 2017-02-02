@@ -137,6 +137,7 @@ export class ShowListComponent implements OnInit {
             // create a marker with the lat and long of the venue
             var newMarker = new Marker(result.json().resultsPage.results.event[0].venue.lat, result.json().resultsPage.results.event[0].venue.lng, result.json().resultsPage.results.event[0].venue.displayName);
             this.markers.push(newMarker);
+            console.log(result.json())
           }
         },
         errorCatch => {
