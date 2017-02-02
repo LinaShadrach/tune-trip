@@ -46,10 +46,12 @@ export class ShowListComponent implements OnInit {
     this.artistList=[];
     this.searchOnInit();
   }
-
+// seaches for hits swpwnsing on client's ip address; triggered on init
   searchOnInit(){
     this.showResults=true;
+    // api  call to get from lastfm the users top tracks
     this.topTracks = this.lastFMService.getTopTracks(this.currentUsername).subscribe(data=>{
+      // for each of the user's top tracks, make an api call to lastfm to get similar tracks
       for(var i=0; i<data.json().toptracks.track.length; i++){
         this.lastFMService.getSimilarTracks(data.json().toptracks.track[i]).subscribe(response=>{
           this.getArtistsInit(response);
@@ -60,16 +62,23 @@ export class ShowListComponent implements OnInit {
       };
     });
   }
+ // receives input from searchOnInit; uses information to get shows in user's current location
   getArtistsInit(response){
     var currentTrack;
+    // for each of the similar tracks, get the artist and make an api call to songKick to see if they are playing in that area
     for(var i=0; i<response.json().similartracks.track.length; i++){
+      // if the artist list is not undefined, add to it instead of creating it
       if(this.artistList!==undefined){
+        // api call to songKick to check if artist is playing in area
           currentTrack=this.songKickService.getArtists(response.json().similartracks.track[i]).subscribe(result=>{
+            // check to make sure the status isn't an error before trying to add it to the list
             if(result.json().resultsPage.status!=="error"){
               this.artistList.push(result.json());
+              // check to make sure the event exists
               if(result.json().resultsPage.results.event){
                 console.log(result.json());
                 console.log(result.json().resultsPage.results.event[0].venue.lat);
+                // create a marker with the lat and long of the venue
                 var newMarker = new Marker(result.json().resultsPage.results.event[0].venue.lat, result.json().resultsPage.results.event[0].venue.lng, result.json().resultsPage.results.event[0].venue.displayName);
                 this.markers.push(newMarker);
               }
@@ -85,6 +94,7 @@ export class ShowListComponent implements OnInit {
       }
     }
   }
+// searches for hits with location entered by user; triggered by search button
   searchWithLocation(location){
     this.artistList=[];
     this.selectedArtist=null;
