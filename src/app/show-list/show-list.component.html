@@ -67,8 +67,11 @@
         </ul>
     </div>
   </div>
-  <div *ngIf="done">
-  <sebm-google-map [latitude]="lat" [longitude]="lng">
+  <div>
+  <sebm-google-map *ngIf="done"
+    [latitude]="lat"
+    [longitude]="lng"
+    [zoom]="zoom">
     <sebm-google-map-marker
           *ngFor="let m of markers; let i = index"
           (markerClick)="clickedMarker(m.label, i)"
