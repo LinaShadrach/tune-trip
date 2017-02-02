@@ -1,6 +1,6 @@
 <div *ngIf="childShow">
-  <div class="detailgradient-container">
-    <div class="detail-container">
+  <!-- <div class="detailgradient-container">
+    <div class="detail-container"> -->
       <!-- <div class="nav">
         <div class="nav-left">
           <img src="../assets/img/guitar.png">
@@ -11,13 +11,17 @@
           <h3>Artist Showtimes</h3>
         </div>
       </div> -->
+      <ul>
       <div class="detailform">
         <div class="detailOutput">
-          <h2>{{childShow.performance[0].displayName}}</h2>
-          <h2>{{childShow.performance[0].displayName}}</h2>
-          <h2>{{childShow.start.time}}</h2>
+          <li>{{childShow.performance[0].displayName}}</li>
+          <li>{{childShow.start.date}}</li>
+          <li>{{childShow.start.time}}</li>
+          <li>{{childShow.venue.displayName}}</li>
+          <li><a href="{{childShow.venue.uri}}">SongKick Show Link</a></li>
         </div>
       </div>
-    </div>
-  </div>
+    </ul>
+    <!-- </div>
+  </div> -->
 </div>

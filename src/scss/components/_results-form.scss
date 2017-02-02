@@ -22,7 +22,7 @@
   }
   button {
     @include button($black);
-    margin: 0px 10px 15px 60px;
+    margin: 0px 10px 15px 20px;
  }
   .search {
     width: 20%;
@@ -46,6 +46,7 @@
   border-radius: 0px 0px 20px 20px;
   font-family: 'Orbitron', sans-serif;
   padding: 15px;
+  z-index: 20;
 }
 ::-webkit-scrollbar {
     width: 12px;
@@ -88,7 +89,8 @@
     color: $lime-green;
     font-size: 1.6rem;
     padding: 7px;
-  font-family: 'Days One', sans-serif;
+    font-family: 'Days One', sans-serif;
+    cursor: pointer;
   }
 }
 .displayLine {
