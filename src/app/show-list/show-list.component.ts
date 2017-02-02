@@ -5,7 +5,8 @@ import { LastFMService } from '../last-fm.service';
 import { Observable } from 'rxjs/Observable';
 import { GeocodingService } from '../geocoding.service';
 import { Marker } from '../marker.model';
-import 'rxjs/add/operator/catch';
+import { Http, Response } from '@angular/http';
+
 
 
 import { SongKickService } from '../song-kick.service';
@@ -38,7 +39,7 @@ export class ShowListComponent implements OnInit {
   artistNameList=[];
 
 
-  constructor(private router: Router, private userService: UserService, private route: ActivatedRoute, private lastFMService: LastFMService, private songKickService: SongKickService, private geocodingService: GeocodingService) { }
+  constructor(private router: Router, private userService: UserService, private route: ActivatedRoute, private lastFMService: LastFMService, private songKickService: SongKickService, private geocodingService: GeocodingService, private http: Http) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
@@ -48,7 +49,21 @@ export class ShowListComponent implements OnInit {
     this.currentUsername=this.userService.setUsername(this.userId);
     this.artistList=[];
     this.searchOnInit();
+    // this.getClientIp();
   }
+  // sets the lat and lng on page init depending on clients ip address
+  // getClientIp (){
+  //   this.http.get("http://ipv4.myexternalip.com/json").subscribe(data=>{
+  //     console.log(data.json().ip);
+  //     this.http.get("http://freegeoip.net/json/"+data.json().ip).subscribe(response=>{
+  //       console.log(response.json().latitude);
+  //       console.log(response.json().longitude);
+  //
+  //       this.lat=(response.json().latitude);
+  //       this.lng=(response.json().longitude);
+  //       });
+  //   });
+  // }
 // seaches for hits based on client's ip address; triggered on component init
   searchOnInit(){
     this.markers=[];
