@@ -3,6 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { LastFMService } from '../last-fm.service';
 import { Observable } from 'rxjs/Observable';
+import {TimerObservable} from "rxjs/observable/TimerObservable";
 import { GeocodingService } from '../geocoding.service';
 import { Marker } from '../marker.model';
 import { Http, Response } from '@angular/http';
@@ -23,7 +24,7 @@ import { User } from '../user.model';
 export class ShowListComponent implements OnInit {
   lat=45.5231;
   lng=-122.6765;
-  zoom: number = 9;
+  zoom: number = 10;
   userToDisplay;
   userId: string;
   currentUsername;
@@ -39,6 +40,7 @@ export class ShowListComponent implements OnInit {
   markers: Marker[]=[];
   artistNameList=[];
   artistLinkList=[];
+  timerSpeed = 2500;
 
   constructor(private router: Router, private userService: UserService, private route: ActivatedRoute, private lastFMService: LastFMService, private songKickService: SongKickService, private geocodingService: GeocodingService, private http: Http) { }
 
@@ -50,6 +52,8 @@ export class ShowListComponent implements OnInit {
     this.currentUsername=this.userService.setUsername(this.userId);
     this.artistList=[];
     this.searchOnInit();
+    let timer = TimerObservable.create(this.timerSpeed);
+    timer.subscribe(t=>{this.done=true});
   }
   // sets the lat and lng on page init depending on clients ip address
   // decided not to implement; could only retrieve ip address of internet service provider
@@ -73,9 +77,9 @@ export class ShowListComponent implements OnInit {
       for(var i=0; i<topTracksData.json().toptracks.track.length; i++){
         this.lastFMService.getSimilarTracks(topTracksData.json().toptracks.track[i]).subscribe(similarTracksData=>{
           this.getArtistsInit(similarTracksData);
-          if(i=topTracksData.json().toptracks.track.length-1){
-            this.done=true;
-          }
+          // if(i=topTracksData.json().toptracks.track.length-1){
+          //   this.done=true;
+          // }
         });
       };
     });
@@ -109,6 +113,8 @@ export class ShowListComponent implements OnInit {
     this.artistList=[];
     this.selectedArtist=null;
     this.done=false;
+    let timer2 = TimerObservable.create(this.timerSpeed);
+    timer2.subscribe(t=>{this.done=true});
     this.artistNameList=[];
     this.topTracks = this.lastFMService.getTopTracks(this.currentUsername).subscribe(tracksData=>{
       for(var i=0; i<tracksData.json().toptracks.track.length; i++){
@@ -118,9 +124,7 @@ export class ShowListComponent implements OnInit {
             this.lat = locationData.json().results[0].geometry.location.lat;
             this.lng = locationData.json().results[0].geometry.location.lng;
           });
-          if(i=tracksData.json().toptracks.track.length-1){
-            this.done=true;
-          }
+
         });
       };
     });
@@ -158,6 +162,4 @@ export class ShowListComponent implements OnInit {
   clickMarker(i){
     this.selectedArtist=this.artistList[i].resultsPage.results.event[0];
   }
-
-
 }
