@@ -322,6 +322,12 @@ a {
 
 .userForm {
   font-family: 'Orbitron', sans-serif; }
+  .userForm p {
+    font-size: 1.5rem;
+    text-align: left;
+    font-family: 'Orbitron', sans-serif;
+    color: #84d100;
+    margin-top: 20px; }
 
 .nav {
   font-family: 'Orbitron', sans-serif; }
@@ -660,6 +666,11 @@ a {
     .nav-results {
       width: 80vw;
       margin-top: 15px; } }
+
+.clock {
+  width: 23vw;
+  margin: 0px auto;
+  margin-top: 3%; }
 
 .nav-right-results {
   display: flex;
