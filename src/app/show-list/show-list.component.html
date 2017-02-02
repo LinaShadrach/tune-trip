@@ -57,9 +57,9 @@
         </div>
       </div>
           <ul *ngIf="done" class="resultOutput">
-            <div *ngFor="let artist of artistList">
+            <div *ngFor="let artist of artistList; let i = index">
               <div *ngIf="artist.resultsPage.results.event" class="resultList">
-                <li (click)="showDetail(artist.resultsPage.results.event[0])" class="displayline">{{artist.resultsPage.results.event[0].displayName}}</li>
+                <li (mouseover)="mouseOnShow(artist.resultsPage.results.event[0].venue.displayName, i)" (mouseleave)="mouseOffShow(i)"(click)="showDetail(artist.resultsPage.results.event[0])" class="displayline">{{artist.resultsPage.results.event[0].displayName}}</li>
               </div>
             </div>
         </ul>
@@ -69,10 +69,12 @@
           [zoom]="zoom">
           <sebm-google-map-marker
                 *ngFor="let m of markers; let i = index"
+                (markerHover)="markerMouseOver(i)"
                 (markerClick)="clickMarker(i)"
                 [latitude]="m.latitude"
                 [longitude]="m.longitude"
-                [label]="m.label">
+                [label]="m.label"
+                [title]="m.title">
           </sebm-google-map-marker>
         </sebm-google-map>
     </div>
