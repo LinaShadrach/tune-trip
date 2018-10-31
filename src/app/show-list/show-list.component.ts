@@ -9,6 +9,9 @@ import { Marker } from '../marker.model';
 import { Http, Response } from '@angular/http';
 import {SebmGoogleMap, SebmGoogleMapMarker} from 'angular2-google-maps/core';
 
+import {map} from "rxjs/operator/map";
+
+
 // import { baseAddEventListeners } from '../marker.model';
 
 import { SongKickService } from '../song-kick.service';
@@ -72,17 +75,15 @@ export class ShowListComponent implements OnInit {
     this.markers=[];
     this.artistNameList=[];
     // api  call to get from lastfm the users top tracks
-    this.topTracks = this.lastFMService.getTopTracks(this.currentUsername).subscribe(topTracksData=>{
-      // for each of the user's top tracks, make an api call to lastfm to get similar tracks
-      for(var i=0; i<topTracksData.json().toptracks.track.length; i++){
-        this.lastFMService.getSimilarTracks(topTracksData.json().toptracks.track[i]).subscribe(similarTracksData=>{
-          this.getArtistsInit(similarTracksData);
-          // if(i=topTracksData.json().toptracks.track.length-1){
-          //   this.done=true;
-          // }
-        });
-      };
-    });
+    this.lastFMService.getInitSearchResults(this.currentUsername);
+    // this.topTracks = this.lastFMService.getTopTracks(this.currentUsername).subscribe(topTracksData=>{
+    //   // for each of the user's top tracks, make an api call to lastfm to get similar tracks
+    //   for(var i=0; i<topTracksData.json().toptracks.track.length; i++){
+    //     this.lastFMService.getSimilarTracks(topTracksData.json().toptracks.track[i]).subscribe(similarTracksData=>{
+    //       this.getArtistsInit(similarTracksData);
+    //     });
+    //   };
+    // });
   }
  // receives input from searchOnInit; uses information to get shows in user's current location
   getArtistsInit(similarTracksData){
@@ -119,11 +120,11 @@ export class ShowListComponent implements OnInit {
     this.topTracks = this.lastFMService.getTopTracks(this.currentUsername).subscribe(tracksData=>{
       for(var i=0; i<tracksData.json().toptracks.track.length; i++){
         this.lastFMService.getSimilarTracks(tracksData.json().toptracks.track[i]).subscribe(similarTrackData=>{
-          this.geocodingService.getLatLng(location).subscribe(locationData=>{
-            this.getArtists(similarTrackData, locationData.json().results[0].geometry.location.lat, locationData.json().results[0].geometry.location.lng);
-            this.lat = locationData.json().results[0].geometry.location.lat;
-            this.lng = locationData.json().results[0].geometry.location.lng;
-          });
+          // this.geocodingService.getLatLng(location).subscribe(locationData=>{
+          //   this.getArtists(similarTrackData, locationData.json().results[0].geometry.location.lat, locationData.json().results[0].geometry.location.lng);
+          //   this.lat = locationData.json().results[0].geometry.location.lat;
+          //   this.lng = locationData.json().results[0].geometry.location.lng;
+          // });
 
         });
       };

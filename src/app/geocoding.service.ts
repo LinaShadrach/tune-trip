@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Observable';
 export class GeocodingService {
 
   constructor(private http: Http) { }
-  getLatLng(location){
-    return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?address="+location+"&key="+geoCodeKey);
-  }
+  // getLatLng(location){
+  //   return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?address="+location+"&key="+geoCodeKey);
+  // }
 }
